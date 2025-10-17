@@ -4,8 +4,8 @@
   "name": "Docs",
   "colors": {
 		"primary": "#9D4EDD",
-		"light": "#F0E6FF",
-		"dark": "#000000"
+		"light": "#C77DFF",
+		"dark": "#7B2CBF"
   },
   "favicon": "/favicon.ico",
   "navigation": {
@@ -47,7 +47,7 @@
             ]
           },
           {
-            "group": "Providers",
+            "group": "Cloud Providers",
             "pages": [
               "providers/1.overview",
               "providers/anthropic",
@@ -58,7 +58,6 @@
               "providers/deepseek",
               "providers/fireworks",
               "providers/openrouter",
-              "providers/ollama",
               "providers/xai-grok"
             ]
           },
@@ -75,7 +74,8 @@
             "pages": [
               "running-models-locally/1.overview",
               "running-models-locally/lm-studio",
-              "running-models-locally/ollama"
+              "running-models-locally/ollama",
+              "providers/ollama"
             ]
           },
           {
