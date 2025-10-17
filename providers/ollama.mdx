@@ -1,80 +1,89 @@
 ---
 title: "Ollama"
-description: "Learn how to configure and use Ollama's local models"
+description: "A quick guide to setting up Ollama for local AI model execution with CodinIT."
 icon: "/icons/ollama.svg"
 ---
 
-Codinit supports running models locally using Ollama. This approach offers privacy, offline access, and potentially reduced costs. It requires some initial setup and a sufficiently powerful computer. Because of the present state of consumer hardware, it's not recommended to use Ollama with Codinit as performance will likely be poor for average hardware configurations.
+### Prerequisites
 
-**Website:** [https://ollama.com/](https://ollama.com/)
+-   Windows, macOS, or Linux computer
 
-### Setting up Ollama
+### Setup Steps
 
-1.  **Download and Install Ollama:**
-    Obtain the Ollama installer for your operating system from the [Ollama website](https://ollama.com/) and follow their installation guide. Ensure Ollama is running. You can typically start it with:
+#### 1. Install Ollama
 
-    ```bash
-    ollama serve
-    ```
+-   Visit [ollama.com](https://ollama.com)
+-   Download and install for your operating system
 
-2.  **Download a Model:**
-    Ollama supports a wide variety of models. A list of available models can be found on the [Ollama model library](https://ollama.com/library). Some models recommended for coding tasks include:
+<Frame>
+	<img
+		src="/images/ollama.png"
+		alt="Ollama download page"
+	/>
+</Frame>
 
-    -   `codellama:7b-code` (a good, smaller starting point)
-    -   `codellama:13b-code` (offers better quality, larger size)
-    -   `codellama:34b-code` (provides even higher quality, very large)
-    -   `qwen2.5-coder:32b`
-    -   `mistralai/Mistral-7B-Instruct-v0.1` (a solid general-purpose model)
-    -   `deepseek-coder:6.7b-base` (effective for coding)
-    -   `llama3:8b-instruct-q5_1` (suitable for general tasks)
+#### 2. Choose and Download a Model
 
-    To download a model, open your terminal and execute:
+-   Browse models at [ollama.com/search](https://ollama.com/search)
+-   Select model and copy command:
 
     ```bash
-    ollama pull <model_name>
+    ollama run [model-name]
     ```
 
-    For instance:
+<Frame>
+	<img
+		src="/gifs/ollama-model-grab.gif"
+		alt="Selecting a model in Ollama"
+	/>
+</Frame>
 
-    ```bash
-    ollama pull qwen2.5-coder:32b
-    ```
+-   Open your Terminal and run the command:
 
-3.  **Configure the Model's Context Window:**
-    By default, Ollama models often use a context window of 2048 tokens, which can be insufficient for many Codinit requests. A minimum of 12,000 tokens is advisable for decent results, with 32,000 tokens being ideal. To adjust this, you'll modify the model's parameters and save it as a new version.
+    -   Example:
 
-    First, load the model (using `qwen2.5-coder:32b` as an example):
+        ```bash
+        ollama run llama2
+        ```
 
-    ```bash
-    ollama run qwen2.5-coder:32b
-    ```
+Open CodinIT:
 
-    Once the model is loaded within the Ollama interactive session, set the context size parameter:
+1. Click the Provider dropdown
+2. Select "Ollama" as your API provider
+3. Base URL: `http://localhost:11434/` (default, usually no need to change)
+4. Select your model from the dropdown
 
-    ```
-    /set parameter num_ctx 32768
-    ```
+### Recommended Models
 
-    Then, save this configured model with a new name:
+For the best experience with CodinIT, use **Qwen3 Coder 30B**. This model provides strong coding capabilities and reliable tool use for local development.
 
-    ```
-    /save your_custom_model_name
-    ```
+To download it:
+```bash
+ollama run qwen3-coder-30b
+```
 
-    (Replace `your_custom_model_name` with a name of your choice.)
+Other capable models include:
+- `mistral-small` - Good balance of performance and speed
+- `devstral-small` - Optimized for coding tasks
 
-4.  **Configure Codinit:**
-    -   Open the Codinit sidebar (usually indicated by the Codinit icon).
-    -   Click the settings gear icon (⚙️).
-    -   Select "ollama" as the API Provider.
-    -   Enter the Model name you saved in the previous step (e.g., `your_custom_model_name`).
-    -   (Optional) Adjust the base URL if Ollama is running on a different machine or port. The default is `http://localhost:11434`.
-    -   (Optional) Configure the Model context size in Codinit's Advanced settings. This helps Codinit manage its context window effectively with your customized Ollama model.
+### Important Notes
 
-### Tips and Notes
+-   Start Ollama before using with CodinIT
+-   Keep Ollama running in background
+-   First model download may take several minutes
 
--   **Resource Demands:** Running large language models locally can be demanding on system resources. Ensure your computer meets the requirements for your chosen model.
--   **Model Choice:** Experiment with various models to discover which best fits your specific tasks and preferences.
--   **Offline Capability:** After downloading a model, you can use Codinit with that model even without an internet connection.
--   **Token Usage Tracking:** Codinit tracks token usage for models accessed via Ollama, allowing you to monitor consumption.
--   **Ollama's Own Documentation:** For more detailed information, consult the official [Ollama documentation](https://ollama.com/docs).
+### Enable Compact Prompts
+
+For better performance with local models, enable compact prompts in CodinIT settings. This reduces the prompt size by 90% while maintaining core functionality.
+
+Navigate to CodinIT Settings → Features → Use Compact Prompt and toggle it on.
+
+### Troubleshooting
+
+If CodinIT can't connect to Ollama:
+
+1. Verify Ollama is running
+2. Check base URL is correct
+3. Ensure model is downloaded
+
+Need more info? Read the [Ollama Docs](https://github.com/ollama/ollama/blob/main/docs/api.md).
