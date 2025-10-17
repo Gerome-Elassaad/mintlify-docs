@@ -1,36 +1,99 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+		"primary": "#9D4EDD",
+		"light": "#F0E6FF",
+		"dark": "#000000"
   },
   "favicon": "/favicon.ico",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Introduction",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "introduction/welcome"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/installing-codinit",
+              "getting-started/select-your-model",
+              "getting-started/your-first-project"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/overview",
+              "features/development/workbench",
+              "features/development/code-editor",
+              "features/development/terminal",
+              "features/development/webcontainer",
+              "features/development/developers"
+            ]
+          },
+          {
+            "group": "Model Configuration",
+            "pages": [
+              "model-config/context-windows",
+              "model-config/model-comparison"
+            ]
+          },
+          {
+            "group": "Providers",
+            "pages": [
+              "providers/1.overview",
+              "providers/anthropic",
+              "providers/openai",
+              "providers/google",
+              "providers/mistral-ai",
+              "providers/groq",
+              "providers/deepseek",
+              "providers/fireworks",
+              "providers/openrouter",
+              "providers/ollama",
+              "providers/xai-grok"
+            ]
+          },
+          {
+            "group": "AWS Bedrock",
+            "pages": [
+              "providers/aws-bedrock/api-key",
+              "providers/aws-bedrock/cli-profile",
+              "providers/aws-bedrock/iam-credentials"
+            ]
+          },
+          {
+            "group": "Running Models Locally",
+            "pages": [
+              "running-models-locally/1.overview",
+              "running-models-locally/lm-studio",
+              "running-models-locally/ollama"
+            ]
+          },
+          {
+            "group": "Prompting",
+            "pages": [
+              "prompting/prompt-engineering-guide"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Content & Customization",
+        "groups": [
+          {
+            "group": "Essentials",
             "pages": [
               "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
+              "essentials/navigation",
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
@@ -38,11 +101,17 @@
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Integrations",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "integrations/git",
+              "integrations/supabase",
+              "integrations/deployments"
+            ]
+          },
+          {
+            "group": "MCP Integration",
+            "pages": [
+              "mcp-integration/mcp"
             ]
           }
         ]
@@ -66,38 +135,50 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Support",
+        "groups": [
+          {
+            "group": "Help & Documentation",
+            "pages": [
+              "frequently-asked-questions",
+              "troubleshooting"
+            ]
+          }
+        ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Blog",
+          "href": "https://codinit.dev/blog",
+          "icon": "newspaper"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Web Version Docs",
+          "href": "https://docs.codinit.dev/",
+          "icon": "book-open-cover"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/logo-dark.png",
+    "dark": "/logo/icon.webp"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:gerome.e24@gmail.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Download",
+      "href": "https://codinit.dev/download"
     }
   },
   "contextual": {
@@ -114,9 +195,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/",
+      "github": "https://github.com/codinit-dev",
+      "linkedin": "https://linkedin.com/"
     }
   }
 }
