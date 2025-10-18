@@ -11,15 +11,22 @@ CodinIT is highly customizable to match your development workflow and preference
 ## Accessing Settings
 
 <Tabs>
-  <Tab title="macOS">
-    - **Menu**: CodinIT → Preferences → Settings
-    - **Keyboard**: `Cmd + ,`
+  <Tab title="macOS" icon="apple">
+    **Menu**: CodinIT → Preferences → Settings
+
+    **Keyboard**: `Cmd + ,`
   </Tab>
-  <Tab title="Windows/Linux">
-    - **Menu**: File → Preferences → Settings
-    - **Keyboard**: `Ctrl + ,`
+  <Tab title="Windows" icon="windows">
+    **Menu**: File → Preferences → Settings
+
+    **Keyboard**: `Ctrl + ,`
   </Tab>
-  <Tab title="Command Palette">
+  <Tab title="Linux" icon="linux">
+    **Menu**: File → Preferences → Settings
+
+    **Keyboard**: `Ctrl + ,`
+  </Tab>
+  <Tab title="Command Palette" icon="terminal">
     Open Command Palette (`Cmd/Ctrl + Shift + P`) and type "Open Settings"
   </Tab>
 </Tabs>
@@ -224,17 +231,35 @@ Set your preferred AI provider globally:
 
 ### Default Keybindings
 
-| Action | macOS | Windows/Linux |
-|--------|-------|---------------|
-| Open AI Chat | `Cmd + K` | `Ctrl + K` |
-| Inline AI Edit | `Cmd + I` | `Ctrl + I` |
-| Command Palette | `Cmd + Shift + P` | `Ctrl + Shift + P` |
-| Quick File Open | `Cmd + P` | `Ctrl + P` |
-| Terminal Toggle | `` Cmd + ` `` | `` Ctrl + ` `` |
-| Multi-cursor | `Cmd + D` | `Ctrl + D` |
-| Find in Files | `Cmd + Shift + F` | `Ctrl + Shift + F` |
-| Go to Definition | `F12` | `F12` |
-| Format Document | `Shift + Alt + F` | `Shift + Alt + F` |
+<Tabs>
+  <Tab title="macOS" icon="apple">
+    | Action | Shortcut |
+    |--------|----------|
+    | Open AI Chat | `Cmd + K` |
+    | Inline AI Edit | `Cmd + I` |
+    | Command Palette | `Cmd + Shift + P` |
+    | Quick File Open | `Cmd + P` |
+    | Terminal Toggle | `` Cmd + ` `` |
+    | Multi-cursor | `Cmd + D` |
+    | Find in Files | `Cmd + Shift + F` |
+    | Go to Definition | `F12` |
+    | Format Document | `Shift + Alt + F` |
+  </Tab>
+
+  <Tab title="Windows/Linux" icon="windows">
+    | Action | Shortcut |
+    |--------|----------|
+    | Open AI Chat | `Ctrl + K` |
+    | Inline AI Edit | `Ctrl + I` |
+    | Command Palette | `Ctrl + Shift + P` |
+    | Quick File Open | `Ctrl + P` |
+    | Terminal Toggle | `` Ctrl + ` `` |
+    | Multi-cursor | `Ctrl + D` |
+    | Find in Files | `Ctrl + Shift + F` |
+    | Go to Definition | `F12` |
+    | Format Document | `Shift + Alt + F` |
+  </Tab>
+</Tabs>
 
 ### Custom Keybindings
 
@@ -341,7 +366,7 @@ Configure suggested extensions for your project:
 ### Other Languages
 
 <Tabs>
-  <Tab title="Go">
+  <Tab title="Go" icon="code">
     ```json
     {
       "[go]": {
@@ -354,7 +379,7 @@ Configure suggested extensions for your project:
     ```
   </Tab>
 
-  <Tab title="Rust">
+  <Tab title="Rust" icon="code">
     ```json
     {
       "[rust]": {
@@ -365,7 +390,7 @@ Configure suggested extensions for your project:
     ```
   </Tab>
 
-  <Tab title="Java">
+  <Tab title="Java" icon="code">
     ```json
     {
       "[java]": {
