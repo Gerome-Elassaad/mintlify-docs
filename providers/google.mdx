@@ -3,7 +3,10 @@ title: "Google"
 description: "Configure Gemini models with massive 2M token context windows for handling large codebases"
 ---
 
-Google's Gemini models offer unparalleled context handling capabilities with up to 2 million token context windows. This makes them ideal for working with large codebases, comprehensive documentation, and complex multi-step development tasks. CodinIT provides seamless integration with Google's Generative AI API.
+Google's Gemini models offer unparalleled context handling capabilities with up to 2 million token context windows.
+
+**Website:** [https://ai.dev/](https://ai.dev/)
+
 
 <Card
   title="Get Google AI API Key"
@@ -14,25 +17,23 @@ Google's Gemini models offer unparalleled context handling capabilities with up 
   Create your API key at Google AI Studio to start using Gemini models.
 </Card>
 
-## Supported Models
 
 ### Primary Models
 
-<ParamField name="gemini-1.5-pro" type="chat">
+<ParamField name="gemini-2.5-pro" type="chat">
   Google's most capable model with massive context window, perfect for analyzing large codebases and complex projects.
   - **Context Window**: 2M tokens
   - **Output Limit**: 8k tokens
   - **Use Case**: Large codebase analysis, comprehensive refactoring, architecture planning
 </ParamField>
 
-<ParamField name="gemini-1.5-flash" type="chat">
+<ParamField name="gemini-2.5-flash" type="chat">
   Fast and efficient model with excellent performance for everyday coding tasks while maintaining large context support.
   - **Context Window**: 1M tokens
   - **Output Limit**: 8k tokens
   - **Use Case**: Quick code analysis, interactive coding, medium-sized projects
 </ParamField>
 
-## Setup Instructions
 
 ### Step 1: Get API Key
 
@@ -86,8 +87,6 @@ Google's Gemini models offer unparalleled context handling capabilities with up 
 
 ## Configuration Options
 
-### Environment Variables
-
 <ParamField name="GOOGLE_GENERATIVE_AI_API_KEY" type="string" required>
   Your Google Generative AI API key. Get this from [Google AI Studio](https://aistudio.google.com/app/apikey).
 </ParamField>
@@ -109,8 +108,6 @@ Google's Gemini models offer unparalleled context handling capabilities with up 
 </Expandable>
 
 ## Usage Examples
-
-### Large Codebase Analysis
 
 <CodeGroup>
 ```javascript Analyze Complex React Application
@@ -143,8 +140,6 @@ Google's Gemini models offer unparalleled context handling capabilities with up 
 ```
 </CodeGroup>
 
-## Pricing Information
-
 ### Model Pricing (per 1,000 tokens)
 
 | Model | Input | Output |
@@ -157,8 +152,6 @@ Google's Gemini models offer unparalleled context handling capabilities with up 
 </Note>
 
 ## Best Practices
-
-### Leveraging Massive Context
 
 <Steps>
 <Step title="Use Gemini 1.5 Pro for Large Projects">
@@ -203,8 +196,6 @@ Google's Gemini models offer unparalleled context handling capabilities with up 
 </CardGroup>
 
 ## Troubleshooting
-
-### Common Issues
 
 <AccordionGroup>
 <Accordion title="API Key Issues">
@@ -265,8 +256,6 @@ Google's Gemini models offer unparalleled context handling capabilities with up 
 </Steps>
 
 ## Advanced Configuration
-
-### Custom Parameters
 
 <CodeGroup>
 ```json Provider Settings
