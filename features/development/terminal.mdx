@@ -3,70 +3,24 @@ title: "Terminal Integration"
 description: "Full-featured terminal emulator with WebContainer shell integration and advanced command execution"
 ---
 
-## Integrated Terminal Environment
-
-CodinIT's Terminal Integration provides a complete command-line experience directly in your browser, powered by WebContainer's Node.js runtime. Built on [xterm.js](https://xtermjs.org), it offers a professional terminal experience with full shell capabilities.
-
-<Card
-  title="Professional Terminal Experience"
-  icon="command"
-  href="#"
-  horizontal
->
+<Card title="Professional Terminal Experience" icon="command" horizontal href="#">
   Complete terminal environment with multiple shell support, intelligent features, and seamless WebContainer integration.
 </Card>
 
+CodinIT's Terminal Integration provides a complete command-line experience directly in your browser, powered by WebContainer's Node.js runtime. Built on [xterm.js](https://xtermjs.org), it offers a professional terminal experience with full shell capabilities.
+
 ## Terminal Features
-
-<ParamField name="Primary Terminal" type="shell">
-  Main terminal interface for running commands and managing your development workflow.
-  - **Command Execution**: Full command-line interface with history and auto-completion
-  - **Process Management**: Background jobs, process monitoring, and signal handling
-  - **Output Streaming**: Real-time output with intelligent formatting and colors
-  - **Error Handling**: Clear error messages with actionable suggestions
-</ParamField>
-
-<ParamField name="CodinIT Shell" type="codinit-shell">
-  Specialized shell environment optimized for CodinIT's development workflow.
-  - **Enhanced Commands**: Additional commands for CodinIT-specific operations
-  - **Smart Completions**: Context-aware command and file completion
-  - **Workflow Integration**: Direct integration with editor and preview features
-  - **Project Awareness**: Commands that understand your project structure and configuration
-</ParamField>
-
-### Terminal Management
-
-<ParamField name="Multiple Sessions" type="sessions">
-  Support for multiple terminal sessions with independent working directories and environments.
-  - **Session Isolation**: Each terminal session maintains its own environment and history
-  - **Quick Switching**: Fast switching between active terminal sessions
-  - **Session Persistence**: Terminal sessions survive browser refreshes and navigation
-  - **Background Processes**: Keep long-running processes active across sessions
-</ParamField>
-
-<ParamField name="Responsive Design" type="responsive">
-  Terminal interface that adapts to different screen sizes and usage contexts.
-  - **Resizable Interface**: Drag to resize terminal panel to your preference
-  - **Fullscreen Mode**: Maximize terminal for focused command-line work
-  - **Mobile Optimization**: Touch-friendly interface for tablet and mobile development
-  - **Split View**: Side-by-side terminal and editor layout for efficient workflows
-</ParamField>
-
-## Shell Integration
 
 <Expandable title="Node.js Environment">
   <ResponseField name="Full Node.js Shell" type="feature">
     Complete Node.js runtime environment with all standard shell capabilities
   </ResponseField>
-
   <ResponseField name="Package Management" type="feature">
     Native npm, yarn, and pnpm support with intelligent dependency resolution
   </ResponseField>
-
   <ResponseField name="Build Tools" type="feature">
     Direct integration with build tools like Vite, Webpack, and esbuild
   </ResponseField>
-
   <ResponseField name="Development Servers" type="feature">
     Run development servers with hot reload and live preview integration
   </ResponseField>
@@ -75,21 +29,18 @@ CodinIT's Terminal Integration provides a complete command-line experience direc
 ### Command Enhancement
 
 <Steps>
-<Step title="Intelligent Completion">
-  Context-aware auto-completion for files, directories, and command options.
-</Step>
-
-<Step title="Command History">
-  Persistent command history with search and repeat capabilities.
-</Step>
-
-<Step title="Alias Support">
-  Custom command aliases and shell function definitions.
-</Step>
-
-<Step title="Environment Variables">
-  Full support for environment variable management and inheritance.
-</Step>
+  <Step title="Intelligent Completion">
+    Context-aware auto-completion for files, directories, and command options.
+  </Step>
+  <Step title="Command History">
+    Persistent command history with search and repeat capabilities.
+  </Step>
+  <Step title="Alias Support">
+    Custom command aliases and shell function definitions.
+  </Step>
+  <Step title="Environment Variables">
+    Full support for environment variable management and inheritance.
+  </Step>
 </Steps>
 
 ## Development Workflow Integration
@@ -111,26 +62,19 @@ CodinIT's Terminal Integration provides a complete command-line experience direc
 
 ### One-Click Operations
 
-<ParamField name="Common Tasks" type="tasks">
-  Pre-configured commands for common development tasks.
-  - **Project Setup**: Initialize new projects with best-practice configurations
-  - **Dependency Management**: Install, update, and audit project dependencies
-  - **Build & Test**: Run build processes and automated tests
-  - **Deployment**: Deploy applications to various platforms and services
+<ParamField type="tasks">
+  
 </ParamField>
 
-<ParamField name="Custom Commands" type="custom">
-  Create and manage custom command palettes for your specific workflow.
-  - **Personal Scripts**: Define custom scripts for frequent tasks
-  - **Team Standards**: Share command configurations across team members
-  - **Project Templates**: Project-specific command collections
-  - **Automation**: Chain multiple commands for complex workflows
+<ParamField type="custom">
+  
 </ParamField>
 
 ## Advanced Terminal Features
 
 <CodeGroup>
-```bash Process Monitoring
+
+```mdx Process Monitoring
 # List all running processes
 ps aux
 
@@ -149,41 +93,18 @@ bg
 fg
 ```
 
+
 ```typescript Process Integration
-// Programmatic process management
-const { spawn } = require('child_process');
-
-const buildProcess = spawn('npm', ['run', 'build'], {
-  cwd: '/project',
-  env: { ...process.env, NODE_ENV: 'production' }
-});
-
-buildProcess.stdout.on('data', (data) => {
-  console.log(`Build output: ${data}`);
-});
-
-buildProcess.on('close', (code) => {
-  console.log(`Build process exited with code ${code}`);
-});
 ```
+
 </CodeGroup>
 
-### File Operations
-
-<ParamField name="Advanced File Commands" type="file-ops">
-  Powerful file operations and text processing capabilities.
-  - **Text Processing**: grep, sed, awk for advanced text manipulation
-  - **File Comparison**: diff, vimdiff for comparing files and directories
-  - **Batch Operations**: find, xargs for batch file processing
-  - **Archive Management**: tar, zip for creating and extracting archives
+<ParamField type="file-ops">
+  
 </ParamField>
 
-<ParamField name="Remote Operations" type="remote">
-  Connect to remote systems and manage distributed development workflows.
-  - **SSH Integration**: Secure shell access to remote development servers
-  - **Git Remote Operations**: Push, pull, and manage remote repositories
-  - **Remote Deployment**: Deploy to remote servers and cloud platforms
-  - **Multi-Server Management**: Coordinate development across multiple environments
+<ParamField type="remote">
+  
 </ParamField>
 
 ## Customization Options
@@ -192,36 +113,24 @@ buildProcess.on('close', (code) => {
   <ResponseField name="Color Schemes" type="themes">
     Multiple built-in color schemes plus support for custom themes
   </ResponseField>
-
   <ResponseField name="Font Settings" type="fonts">
     Configurable font family, size, and line height for optimal readability
   </ResponseField>
-
   <ResponseField name="Cursor Options" type="cursor">
     Multiple cursor styles including block, underline, and bar cursors
   </ResponseField>
-
   <ResponseField name="Bell Settings" type="bell">
     Visual and audio bell notifications for command completion and errors
   </ResponseField>
+  ### 
 </Expandable>
 
-### Behavior Settings
-
-<ParamField name="Terminal Behavior" type="behavior">
-  Customize how the terminal responds to different situations and user actions.
-  - **Auto-Save**: Automatic saving of command history and session state
-  - **Scroll Settings**: Configure scroll behavior and buffer size
-  - **Selection**: Mouse selection and copy-paste behavior
-  - **Keyboard**: Custom keybindings and shortcuts for terminal operations
+<ParamField type="behavior">
+  
 </ParamField>
 
-<ParamField name="Shell Configuration" type="shell-config">
-  Configure shell behavior and environment settings.
-  - **Working Directory**: Default working directory for new terminal sessions
-  - **Environment Variables**: Set default environment variables for all sessions
-  - **Shell Options**: Configure bash/zsh options and behavior
-  - **Startup Commands**: Define commands to run when terminal starts
+<ParamField type="shell-config">
+  
 </ParamField>
 
 ## Performance Features
@@ -230,150 +139,104 @@ buildProcess.on('close', (code) => {
   <Card title="Fast Startup" icon="rocket">
     Terminal sessions start quickly with minimal overhead and fast process spawning
   </Card>
-  <Card title="Background Processing" icon="cpu">
-    Move heavy operations to background to keep terminal responsive
-  </Card>
   <Card title="Memory Management" icon="memory">
     Efficient memory usage with automatic cleanup of completed processes
   </Card>
-  <Card title="Output Optimization" icon="stream">
-    Optimized output rendering and scrolling for smooth terminal experience
-  </Card>
 </CardGroup>
 
-### Resource Management
-
-<ParamField name="Process Limits" type="limits">
-  Configurable resource limits to prevent runaway processes and system overload.
-  - **CPU Limits**: Prevent processes from consuming excessive CPU resources
-  - **Memory Limits**: Set memory usage limits for individual processes
-  - **Process Count**: Limit the number of concurrent processes per session
-  - **Timeout Settings**: Automatic termination of long-running processes
-</ParamField>
-
-## Integration Features
-
-<ParamField name="Seamless Runtime" type="runtime">
-  Direct integration with WebContainer's Node.js runtime environment.
-  - **Process Communication**: Direct communication between terminal and WebContainer processes
-  - **File System Access**: Real-time file system operations synchronized with editor
-  - **Environment Sharing**: Shared environment variables and working directory
-  - **Error Propagation**: WebContainer errors displayed directly in terminal
-</ParamField>
-
-<ParamField name="Development Tools" type="tools">
-  Integration with popular development tools and their CLI interfaces.
-  - **Git Integration**: Full git command support with visual feedback
-  - **NPM/Yarn**: Package management with intelligent dependency resolution
-  - **Build Tools**: Integration with webpack, vite, parcel, and other build tools
-  - **Testing Frameworks**: Run tests with mocha, jest, vitest, and other test runners
-</ParamField>
-
-## Security & Isolation
-
 <AccordionGroup>
-<Accordion title="Process Isolation">
-  **Container Separation**: Each terminal session runs in an isolated process environment
-</Accordion>
+  <Accordion title="Process Isolation">
+    
 
-<Accordion title="Resource Control">
-  **Limited Access**: Terminal processes have controlled access to system resources
-</Accordion>
-
-<Accordion title="Network Security">
-  **Secure Connections**: All network operations use secure, encrypted connections
-</Accordion>
-
-<Accordion title="Input Sanitization">
-  **Safe Input Handling**: All terminal input is properly sanitized and validated
-</Accordion>
+    **Container Separation**: Each terminal session runs in an isolated process environment
+  </Accordion>
+  <Accordion title="Resource Control">
+    **Limited Access**: Terminal processes have controlled access to system resources
+  </Accordion>
+  <Accordion title="Network Security">
+    **Secure Connections**: All network operations use secure, encrypted connections
+  </Accordion>
+  <Accordion title="Input Sanitization">
+    **Safe Input Handling**: All terminal input is properly sanitized and validated
+  </Accordion>
 </AccordionGroup>
 
-### Safe Execution
+---
+
+## Steps
 
 <Steps>
-<Step title="Command Validation">
-  Validate and sanitize all commands before execution in the WebContainer environment.
-</Step>
-
-<Step title="Resource Monitoring">
-  Monitor resource usage and terminate processes that exceed safe limits.
-</Step>
-
-<Step title="Network Control">
-  Control network access and prevent unauthorized external connections.
-</Step>
-
-<Step title="File System Protection">
-  Protect the file system from accidental or malicious modifications.
-</Step>
+  <Step title="Command Validation">
+    Validate and sanitize all commands before execution in the WebContainer environment.
+  </Step>
+  <Step title="Resource Monitoring">
+    Monitor resource usage and terminate processes that exceed safe limits.
+  </Step>
+  <Step title="Network Control">
+    Control network access and prevent unauthorized external connections.
+  </Step>
+  <Step title="File System Protection">
+    Protect the file system from accidental or malicious modifications.
+  </Step>
 </Steps>
 
-## Mobile & Touch Support
+## Mobile & Touch Suppor
 
-<ParamField name="Touch Interface" type="touch">
-  Optimized terminal experience for touch devices and mobile development.
-  - **Touch Gestures**: Pinch to zoom, tap to select, and swipe to scroll
-  - **Virtual Keyboard**: Specialized keyboard layouts for command-line input
-  - **Responsive Layout**: Adaptive interface that works on any screen size
-  - **Touch Targets**: Appropriately sized touch targets for easy interaction
+<ParamField type="touch">
+  
 </ParamField>
 
-<ParamField name="Mobile Workflows" type="mobile">
-  Development workflows optimized for mobile and tablet devices.
-  - **Quick Commands**: Frequently used commands easily accessible via mobile UI
-  - **Gesture Shortcuts**: Custom gestures for common terminal operations
-  - **Portable Development**: Develop on-the-go with full terminal capabilities
-  - **Sync Across Devices**: Seamless synchronization between desktop and mobile sessions
+<ParamField type="mobile">
+  ## 
 </ParamField>
-
-## Troubleshooting
 
 <AccordionGroup>
-<Accordion title="Terminal Not Starting">
-  **Error**: Terminal fails to initialize or shows connection errors
+  <Accordion title="Terminal Not Starting">
+    **Error**: Terminal fails to initialize or shows connection errors
 
-  **Solutions**:
-  - Check WebContainer connection status and restart if necessary
-  - Clear browser cache and reload the page
-  - Verify browser compatibility and enable required permissions
-  - Check for conflicting browser extensions
-</Accordion>
+    **Solutions**:
 
-<Accordion title="Command Not Found">
-  **Error**: Commands return "command not found" or similar errors
+    - Check WebContainer connection status and restart if necessary
+    - Clear browser cache and reload the page
+    - Verify browser compatibility and enable required permissions
+    - Check for conflicting browser extensions
+  </Accordion>
+  <Accordion title="Command Not Found">
+    **Error**: Commands return "command not found" or similar errors
 
-  **Solutions**:
-  - Verify the command is installed and available in PATH
-  - Check if you're in the correct working directory
-  - Ensure all required dependencies are installed
-  - Try using absolute paths for executables
-</Accordion>
+    **Solutions**:
 
-<Accordion title="Performance Issues">
-  **Error**: Terminal becomes slow or unresponsive during command execution
+    - Verify the command is installed and available in PATH
+    - Check if you're in the correct working directory
+    - Ensure all required dependencies are installed
+    - Try using absolute paths for executables
+  </Accordion>
+  <Accordion title="Performance Issues">
+    **Error**: Terminal becomes slow or unresponsive during command execution
 
-  **Solutions**:
-  - Kill long-running or resource-intensive processes
-  - Restart the terminal session to clear accumulated state
-  - Check system resources and close other applications
-  - Reduce the number of concurrent processes
-</Accordion>
+    **Solutions**:
 
-<Accordion title="Display Problems">
-  **Error**: Terminal output not displaying correctly or garbled text
+    - Kill long-running or resource-intensive processes
+    - Restart the terminal session to clear accumulated state
+    - Check system resources and close other applications
+    - Reduce the number of concurrent processes
+  </Accordion>
+  <Accordion title="Display Problems">
+    **Error**: Terminal output not displaying correctly or garbled text
 
-  **Solutions**:
-  - Check terminal encoding and character set settings
-  - Reset terminal to default configuration
-  - Verify browser font rendering capabilities
-  - Try a different terminal color scheme
-</Accordion>
+    **Solutions**:
+
+    - Check terminal encoding and character set settings
+    - Reset terminal to default configuration
+    - Verify browser font rendering capabilities
+    - Try a different terminal color scheme
+  </Accordion>
 </AccordionGroup>
 
 ## Advanced Configuration
 
 <CodeGroup>
+
 ```bash .bashrc Configuration
 # Custom prompt with git status
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -389,19 +252,10 @@ export NODE_ENV=development
 export EDITOR=code
 ```
 
+
 ```json Terminal Settings
-{
-  "terminal": {
-    "fontSize": 14,
-    "fontFamily": "JetBrains Mono, Consolas, monospace",
-    "cursorStyle": "bar",
-    "scrollback": 1000,
-    "bellStyle": "sound",
-    "copyOnSelect": true,
-    "rightClickCopy": true
-  }
-}
 ```
+
 </CodeGroup>
 
 ### Integration Scripts
@@ -410,15 +264,12 @@ export EDITOR=code
   <ResponseField name="Build Scripts" type="build">
     Custom scripts for automating build processes and deployment workflows
   </ResponseField>
-
   <ResponseField name="Development Tools" type="dev-tools">
     Integration with external development tools and services
   </ResponseField>
-
   <ResponseField name="CI/CD Pipelines" type="cicd">
     Automated testing and deployment pipeline integration
   </ResponseField>
-
   <ResponseField name="Monitoring Tools" type="monitoring">
     Integration with application monitoring and logging services
   </ResponseField>
@@ -426,29 +277,21 @@ export EDITOR=code
 
 ## Keyboard Shortcuts
 
-### Terminal Navigation
+| Shortcut               | Action                           |
+| ---------------------- | -------------------------------- |
+| `Ctrl+C`               | Interrupt current process        |
+| `Ctrl+D`               | Exit terminal session            |
+| `Ctrl+L`               | Clear terminal screen            |
+| `Ctrl+R`               | Search command history           |
+| `Tab`                  | Auto-complete commands and paths |
+| `Ctrl+Shift+C`         | Copy selected text               |
+| `Ctrl+Shift+V`         | Paste text                       |
+| `Ctrl+Shift+N`         | New terminal session             |
+| `Ctrl+Shift+W`         | Close current terminal           |
+| `Ctrl+Shift+PgUp/PgDn` | Switch between terminals         |
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+C` | Interrupt current process |
-| `Ctrl+D` | Exit terminal session |
-| `Ctrl+L` | Clear terminal screen |
-| `Ctrl+R` | Search command history |
-| `Tab` | Auto-complete commands and paths |
-| `Ctrl+Shift+C` | Copy selected text |
-| `Ctrl+Shift+V` | Paste text |
-| `Ctrl+Shift+N` | New terminal session |
-| `Ctrl+Shift+W` | Close current terminal |
-| `Ctrl+Shift+PgUp/PgDn` | Switch between terminals |
-
-### Advanced Shortcuts
-
-<ParamField name="Custom Keybindings" type="custom">
-  Create custom keyboard shortcuts for frequently used commands and workflows.
-  - **Command Palettes**: Quick access to complex command sequences
-  - **Workflow Shortcuts**: Custom shortcuts for project-specific operations
-  - **Navigation Aids**: Keyboard shortcuts for efficient terminal navigation
-  - **Text Manipulation**: Shortcuts for common text editing operations in terminal
+<ParamField type="custom">
+  
 </ParamField>
 
 ## Best Practices
@@ -471,21 +314,18 @@ export EDITOR=code
 ### Development Workflow
 
 <Steps>
-<Step title="Setup Commands">
-  Define and use setup commands to quickly initialize development environments.
-</Step>
-
-<Step title="Build Integration">
-  Integrate build processes directly into your terminal workflow for efficiency.
-</Step>
-
-<Step title="Testing Automation">
-  Automate testing processes with terminal commands and scripts.
-</Step>
-
-<Step title="Deployment Scripts">
-  Create deployment scripts that can be executed directly from the terminal.
-</Step>
+  <Step title="Setup Commands">
+    Define and use setup commands to quickly initialize development environments.
+  </Step>
+  <Step title="Build Integration">
+    Integrate build processes directly into your terminal workflow for efficiency.
+  </Step>
+  <Step title="Testing Automation">
+    Automate testing processes with terminal commands and scripts.
+  </Step>
+  <Step title="Deployment Scripts">
+    Create deployment scripts that can be executed directly from the terminal.
+  </Step>
 </Steps>
 
 <Note>
