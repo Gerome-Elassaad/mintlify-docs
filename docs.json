@@ -66,6 +66,7 @@
           {
             "group": "AWS Bedrock",
             "pages": [
+              "providers/aws-bedrock",
               "providers/aws-bedrock/api-key",
               "providers/aws-bedrock/cli-profile",
               "providers/aws-bedrock/iam-credentials"
@@ -197,9 +198,7 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/",
-      "github": "https://github.com/codinit-dev",
-      "linkedin": "https://linkedin.com/"
+      "github": "https://github.com/codinit-dev"
     }
   },
   "redirects": [
