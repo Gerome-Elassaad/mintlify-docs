@@ -74,7 +74,7 @@
             "pages": [
               "running-models-locally/1.overview",
               "running-models-locally/lm-studio",
-              "running-models-locally/ollama",
+              "running-models-locally/guide",
               "providers/ollama"
             ]
           },

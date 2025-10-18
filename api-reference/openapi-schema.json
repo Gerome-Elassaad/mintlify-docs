@@ -1,0 +1,859 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "CodinIT API",
+    "description": "Comprehensive API for CodinIT - An AI-powered coding assistant with integrations for Git platforms, deployment services, and more.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "CodinIT Support",
+      "url": "https://github.com/Gerome-Elassaad/codinit-app"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8788",
+      "description": "Local development server"
+    },
+    {
+      "url": "https://your-production-domain.com",
+      "description": "Production server"
+    }
+  ],
+  "security": [
+    {
+      "CookieAuth": []
+    },
+    {
+      "BearerAuth": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "CookieAuth": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "apiKeys",
+        "description": "API keys stored in cookies"
+      },
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "JWT or other bearer token authentication"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error message"
+          },
+          "statusCode": {
+            "type": "integer",
+            "description": "HTTP status code"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
+        "required": ["error"]
+      },
+      "ChatMessage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique message identifier"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["user", "assistant", "system"],
+            "description": "Message role"
+          },
+          "content": {
+            "type": "string",
+            "description": "Message content"
+          }
+        },
+        "required": ["id", "role", "content"]
+      },
+      "BugReportRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "description": "Bug report title"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 10,
+            "description": "Detailed bug description"
+          },
+          "stepsToReproduce": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "Steps to reproduce the bug"
+          },
+          "expectedBehavior": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "Expected behavior"
+          },
+          "contactEmail": {
+            "type": "string",
+            "format": "email",
+            "description": "Contact email address"
+          },
+          "includeEnvironmentInfo": {
+            "type": "boolean",
+            "default": false,
+            "description": "Include environment information"
+          },
+          "environmentInfo": {
+            "type": "object",
+            "properties": {
+              "browser": { "type": "string" },
+              "os": { "type": "string" },
+              "screenResolution": { "type": "string" },
+              "codinitVersion": { "type": "string" },
+              "aiProviders": { "type": "string" },
+              "projectType": { "type": "string" },
+              "currentModel": { "type": "string" }
+            }
+          }
+        },
+        "required": ["title", "description"]
+      },
+      "BugReportResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the bug report was submitted successfully"
+          },
+          "issueNumber": {
+            "type": "integer",
+            "description": "GitHub issue number"
+          },
+          "issueUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the created GitHub issue"
+          },
+          "message": {
+            "type": "string",
+            "description": "Success message"
+          }
+        }
+      },
+      "GitHubUser": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string",
+            "description": "GitHub username"
+          },
+          "name": {
+            "type": "string",
+            "description": "Full name"
+          },
+          "avatar_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Avatar URL"
+          },
+          "html_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "GitHub profile URL"
+          },
+          "type": {
+            "type": "string",
+            "description": "Account type (User or Organization)"
+          }
+        }
+      },
+      "GitHubRepository": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Repository ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Repository name"
+          },
+          "full_name": {
+            "type": "string",
+            "description": "Full repository name (owner/repo)"
+          },
+          "html_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Repository URL"
+          },
+          "description": {
+            "type": "string",
+            "description": "Repository description"
+          },
+          "private": {
+            "type": "boolean",
+            "description": "Whether repository is private"
+          },
+          "language": {
+            "type": "string",
+            "description": "Primary programming language"
+          },
+          "stargazers_count": {
+            "type": "integer",
+            "description": "Number of stars"
+          },
+          "forks_count": {
+            "type": "integer",
+            "description": "Number of forks"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Repository topics/tags"
+          }
+        }
+      },
+      "ChatRequest": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatMessage"
+            },
+            "description": "Chat messages"
+          },
+          "files": {
+            "type": "object",
+            "description": "File context for the chat",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "promptId": {
+            "type": "string",
+            "description": "Prompt identifier"
+          },
+          "contextOptimization": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable context optimization"
+          },
+          "chatMode": {
+            "type": "string",
+            "enum": ["discuss", "build"],
+            "default": "discuss",
+            "description": "Chat mode"
+          },
+          "designScheme": {
+            "type": "object",
+            "description": "Design scheme preferences"
+          },
+          "supabase": {
+            "type": "object",
+            "properties": {
+              "isConnected": {
+                "type": "boolean"
+              },
+              "hasSelectedProject": {
+                "type": "boolean"
+              },
+              "credentials": {
+                "type": "object",
+                "properties": {
+                  "anonKey": { "type": "string" },
+                  "supabaseUrl": { "type": "string" }
+                }
+              }
+            }
+          },
+          "maxLLMSteps": {
+            "type": "integer",
+            "default": 10,
+            "description": "Maximum LLM steps"
+          }
+        },
+        "required": ["messages"]
+      },
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["healthy"],
+            "description": "Service health status"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Response timestamp"
+          }
+        }
+      },
+      "ModelsResponse": {
+        "type": "object",
+        "properties": {
+          "modelList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "provider": { "type": "string" },
+                "maxTokens": { "type": "integer" },
+                "supportsFunctionCalling": { "type": "boolean" },
+                "inputPricing": { "type": "number" },
+                "outputPricing": { "type": "number" }
+              }
+            }
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "staticModels": { "type": "boolean" },
+                "getApiKeyLink": { "type": "string" },
+                "labelForGetApiKey": { "type": "string" },
+                "icon": { "type": "string" }
+              }
+            }
+          },
+          "defaultProvider": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "staticModels": { "type": "boolean" },
+              "getApiKeyLink": { "type": "string" },
+              "labelForGetApiKey": { "type": "string" },
+              "icon": { "type": "string" }
+            }
+          }
+        }
+      },
+      "ConfiguredProvidersResponse": {
+        "type": "object",
+        "properties": {
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Provider name"
+                },
+                "isConfigured": {
+                  "type": "boolean",
+                  "description": "Whether provider is configured"
+                },
+                "configMethod": {
+                  "type": "string",
+                  "enum": ["environment", "none"],
+                  "description": "Configuration method"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api/chat": {
+      "post": {
+        "summary": "Send chat message",
+        "description": "Send a chat message and receive a streaming response from the AI assistant",
+        "security": [
+          {
+            "CookieAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Streaming chat response",
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "type": "string",
+                  "description": "Server-sent events stream"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bug-report": {
+      "post": {
+        "summary": "Submit bug report",
+        "description": "Submit a bug report that will be created as a GitHub issue",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/BugReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Bug report submitted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BugReportResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid input or spam detected",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/github-user": {
+      "get": {
+        "summary": "Get GitHub user information",
+        "description": "Retrieve authenticated user's GitHub profile information",
+        "security": [
+          {
+            "CookieAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GitHub user information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GitHubUser"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid GitHub token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "GitHub user actions",
+        "description": "Perform various GitHub actions like fetching repositories, branches, or searching",
+        "security": [
+          {
+            "CookieAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": ["get_repos", "get_branches", "get_token", "search_repos"],
+                    "description": "Action to perform"
+                  },
+                  "repo": {
+                    "type": "string",
+                    "description": "Repository name (for get_branches action)"
+                  },
+                  "query": {
+                    "type": "string",
+                    "description": "Search query (for search_repos action)"
+                  },
+                  "per_page": {
+                    "type": "integer",
+                    "default": 30,
+                    "description": "Number of results per page"
+                  }
+                },
+                "required": ["action"]
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": ["get_repos", "get_branches", "get_token", "search_repos"]
+                  },
+                  "repo": { "type": "string" },
+                  "query": { "type": "string" },
+                  "per_page": { "type": "string" }
+                },
+                "required": ["action"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Action completed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "repos": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/GitHubRepository"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "branches": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "name": { "type": "string" },
+                              "commit": {
+                                "type": "object",
+                                "properties": {
+                                  "sha": { "type": "string" },
+                                  "url": { "type": "string" }
+                                }
+                              },
+                              "protected": { "type": "boolean" }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "token": { "type": "string" }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "repos": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/GitHubRepository"
+                          }
+                        },
+                        "total_count": { "type": "integer" },
+                        "incomplete_results": { "type": "boolean" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid action or missing parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid GitHub token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "summary": "Health check",
+        "description": "Check if the service is healthy and running",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/models": {
+      "get": {
+        "summary": "Get available AI models",
+        "description": "Retrieve list of available AI models and providers",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "query",
+            "description": "Filter models by specific provider",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of available models and providers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/models/{provider}": {
+      "get": {
+        "summary": "Get models for specific provider",
+        "description": "Retrieve available models for a specific AI provider",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "path",
+            "required": true,
+            "description": "Provider name",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of models for the specified provider",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/check-env-key": {
+      "get": {
+        "summary": "Check if API key is configured",
+        "description": "Check if an API key is configured for a specific provider",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "query",
+            "required": true,
+            "description": "Provider name to check",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API key configuration status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSet": {
+                      "type": "boolean",
+                      "description": "Whether the API key is configured"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/configured-providers": {
+      "get": {
+        "summary": "Get configured providers",
+        "description": "Retrieve list of providers that are configured via environment variables",
+        "responses": {
+          "200": {
+            "description": "List of configured providers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfiguredProvidersResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
