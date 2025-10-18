@@ -3,22 +3,14 @@ title: "Git Integration"
 description: "Seamlessly connect and manage Git repositories from GitHub and GitLab for collaborative development and automated deployments"
 ---
 
-## Git Repository Management
 
-CodinIT provides comprehensive Git integration with GitHub and GitLab, enabling seamless repository management, collaborative development, and automated deployment workflows. Import repositories, manage branches, and push changes directly from your workspace.
-
-<Card
-  title="Connect Repository"
-  icon="github"
-  href="#github-setup"
-  horizontal
->
+<Card title="Connect Repository" icon="github" horizontal href="#github-setup">
   Connect your Git repositories to enable version control and collaborative features.
 </Card>
 
-## Supported Platforms
+CodinIT provides comprehensive Git integration with GitHub and GitLab, enabling seamless repository management, collaborative development, and automated deployment workflows. Import repositories, manage branches, and push changes directly from your workspace.
 
-### Git Hosting Services
+## Supported Platforms
 
 <Columns cols={2}>
   <Card title="GitHub" icon="github" href="#github">
@@ -64,12 +56,7 @@ CodinIT provides comprehensive Git integration with GitHub and GitLab, enabling 
 
 GitHub is the world's largest development platform. CodinIT's GitHub integration provides complete access to repositories, branches, user management, and API functionality for seamless development workflows.
 
-<Card
-  title="Get GitHub Token"
-  icon="key"
-  href="https://github.com/settings/personal-access-tokens"
-  horizontal
->
+<Card title="Get GitHub Token" icon="key" horizontal href="https://github.com/settings/personal-access-tokens">
   Create a personal access token with repository permissions to enable GitHub integration.
 </Card>
 
@@ -80,7 +67,7 @@ GitHub is the world's largest development platform. CodinIT's GitHub integration
     <Card title="Repository Access" icon="folder">
       Access all your repositories, including private and organization repositories.
     </Card>
-    <Card title="Branch Operations" icon="git-branch">
+    <Card title="Branch Operations" icon="code-branch">
       View, create, and switch between branches across all repositories.
     </Card>
     <Card title="Repository Statistics" icon="bar-chart">
@@ -94,16 +81,16 @@ GitHub is the world's largest development platform. CodinIT's GitHub integration
 
 <Expandable title="Development Workflow">
   <CardGroup cols={2}>
-    <Card title="Repository Cloning" icon="download">
+    <Card title="Repository Cloning" icon="download" horizontal>
       Clone repositories directly into your CodinIT workspace with full Git history.
     </Card>
-    <Card title="Push Changes" icon="upload">
+    <Card title="Push Changes" icon="upload" horizontal>
       Push workspace changes back to GitHub repositories with automatic commit creation.
     </Card>
-    <Card title="Pull Request Integration" icon="git-pull-request">
+    <Card title="Pull Request Integration" icon="code-pull-request" iconType="regular" color="#f7f7f7" horizontal>
       Create and manage pull requests directly from your workspace.
     </Card>
-    <Card title="Issue Tracking" icon="issue">
+    <Card title="Issue Tracking" icon="circle-info" horizontal>
       Link commits and changes to GitHub issues for better project tracking.
     </Card>
   </CardGroup>
@@ -113,24 +100,21 @@ GitHub is the world's largest development platform. CodinIT's GitHub integration
 
 <Steps>
   <Step title="Create GitHub Personal Access Token">
-    Visit [GitHub Settings > Personal access tokens](https://github.com/settings/personal-access-tokens) and click **"Generate new token"**.
+    Visit [GitHub Settings \> Personal access tokens](https://github.com/settings/personal-access-tokens) and click **"Generate new token"**.
   </Step>
-
   <Step title="Configure Token Permissions">
     Enable the following permissions:
+
     - **repo**: Full control of private repositories
     - **workflow**: Update GitHub Action workflows
     - **user**: Read user profile information
   </Step>
-
   <Step title="Connect GitHub Account in CodinIT">
-    Navigate to **Settings > Git > GitHub** and enter your personal access token.
+    Navigate to **Settings \> Git \> GitHub** and enter your personal access token.
   </Step>
-
   <Step title="Authorize Repository Access">
     Grant CodinIT permission to access your repositories when prompted.
   </Step>
-
   <Step title="Start Using Git Features">
     Import repositories, clone projects, or push changes to GitHub.
   </Step>
@@ -138,11 +122,11 @@ GitHub is the world's largest development platform. CodinIT's GitHub integration
 
 ### Configuration Options
 
-<ParamField name="GITHUB_API_KEY" type="string" required>
+<ParamField type="string" required>
   Your GitHub personal access token. Get this from [GitHub Personal Access Tokens](https://github.com/settings/personal-access-tokens).
 </ParamField>
 
-<ParamField name="GITHUB_USERNAME" type="string">
+<ParamField type="string">
   Your GitHub username. Automatically detected from token if not provided.
 </ParamField>
 
@@ -152,12 +136,7 @@ GitHub is the world's largest development platform. CodinIT's GitHub integration
 
 GitLab provides a complete DevOps platform with source code management, CI/CD, and project management. CodinIT's GitLab integration offers full API access for repository operations and project management.
 
-<Card
-  title="Get GitLab Token"
-  icon="key"
-  href="https://gitlab.com/-/profile/personal_access_tokens"
-  horizontal
->
+<Card title="Get GitLab Token" icon="key" horizontal href="https://gitlab.com/-/profile/personal_access_tokens">
   Create a personal access token with API and repository permissions.
 </Card>
 
@@ -203,22 +182,19 @@ GitLab provides a complete DevOps platform with source code management, CI/CD, a
   <Step title="Create GitLab Personal Access Token">
     Go to [GitLab Personal Access Tokens](https://gitlab.com/-/profile/personal_access_tokens) and create a new token.
   </Step>
-
   <Step title="Configure Token Scopes">
     Enable the following scopes:
+
     - **api**: Full API access to your projects
     - **write_repository**: Push access to repositories
     - **read_user**: Read your user profile information
   </Step>
-
   <Step title="Connect GitLab Account in CodinIT">
-    Navigate to **Settings > Git > GitLab** and enter your access token.
+    Navigate to **Settings \> Git \> GitLab** and enter your access token.
   </Step>
-
   <Step title="Configure GitLab Instance (Optional)">
     Specify your GitLab instance URL if using GitLab self-hosted.
   </Step>
-
   <Step title="Start Using Git Features">
     Import projects, clone repositories, or push changes to GitLab.
   </Step>
@@ -226,15 +202,15 @@ GitLab provides a complete DevOps platform with source code management, CI/CD, a
 
 ### Configuration Options
 
-<ParamField name="GITLAB_API_KEY" type="string" required>
+<ParamField type="string" required>
   Your GitLab personal access token. Get this from [GitLab Personal Access Tokens](https://gitlab.com/-/profile/personal_access_tokens).
 </ParamField>
 
-<ParamField name="GITLAB_USERNAME" type="string">
+<ParamField type="string">
   Your GitLab username. Automatically detected from token if not provided.
 </ParamField>
 
-<ParamField name="GITLAB_URL" type="string">
+<ParamField type="string">
   Your GitLab instance URL. Defaults to `https://gitlab.com` for GitLab.com.
 </ParamField>
 
@@ -243,6 +219,7 @@ GitLab provides a complete DevOps platform with source code management, CI/CD, a
 ### Cloning Repositories
 
 <CodeGroup>
+
 ```bash Clone from GitHub
 # Clone a public repository
 https://github.com/username/repository-name
@@ -254,6 +231,7 @@ https://github.com/username/private-repository-name
 https://github.com/username/repository-name --branch feature-branch
 ```
 
+
 ```bash Clone from GitLab
 # Clone a public project
 https://gitlab.com/username/project-name
@@ -264,6 +242,7 @@ https://gitlab.com/username/private-project-name
 # Clone from self-hosted GitLab
 https://gitlab.company.com/username/project-name
 ```
+
 </CodeGroup>
 
 ### Repository Cloning Features
@@ -285,6 +264,7 @@ https://gitlab.company.com/username/project-name
 ### Pushing to Repositories
 
 <CodeGroup>
+
 ```bash Push to GitHub
 # Push current workspace to new GitHub repository
 codinit-workspace -> github.com/username/new-repository
@@ -296,6 +276,7 @@ workspace-changes -> github.com/username/existing-repository
 feature-branch -> github.com/username/repository-name:feature-branch
 ```
 
+
 ```bash Push to GitLab
 # Push current workspace to new GitLab project
 codinit-workspace -> gitlab.com/username/new-project
@@ -306,6 +287,7 @@ workspace-changes -> gitlab.com/username/existing-project
 # Push to development branch
 dev-branch -> gitlab.com/username/project-name:development
 ```
+
 </CodeGroup>
 
 ## Template Integration
@@ -318,7 +300,7 @@ CodinIT includes curated starter templates from GitHub repositories to help you 
   <Card title="React + TypeScript" icon="react">
     Modern React application with TypeScript, ESLint, and testing setup.
   </Card>
-  <Card title="Next.js + shadcn/ui" icon="nextjs">
+  <Card title="Next.js + shadcn/ui">
     Full-stack Next.js application with shadcn/ui components and styling.
   </Card>
   <Card title="Vue.js + Vite" icon="vue">
@@ -339,21 +321,17 @@ CodinIT includes curated starter templates from GitHub repositories to help you 
 
 <Steps>
   <Step title="Browse Available Templates">
-    Navigate to **File > New Project** to see all available starter templates.
+    Navigate to **File \> New Project** to see all available starter templates.
   </Step>
-
   <Step title="Preview Template Contents">
     Review the template structure, dependencies, and configuration before importing.
   </Step>
-
   <Step title="Customize Template Settings">
     Modify template variables like project name, author, and configuration options.
   </Step>
-
   <Step title="Import Template">
     Import the template into your workspace and start development immediately.
   </Step>
-
   <Step title="Initialize Git Repository (Optional)">
     Initialize a new Git repository or connect to an existing remote repository.
   </Step>
@@ -364,6 +342,7 @@ CodinIT includes curated starter templates from GitHub repositories to help you 
 ### Working with Branches
 
 <CodeGroup>
+
 ```bash Create New Branch
 # Create and switch to a new feature branch
 git checkout -b feature/new-component
@@ -375,6 +354,7 @@ git checkout -b bugfix/navigation-issue
 git checkout -b experiment/new-architecture
 ```
 
+
 ```bash Switch Between Branches
 # Switch to existing branch
 git checkout feature/user-authentication
@@ -385,6 +365,7 @@ git checkout main
 # View all available branches
 git branch -a
 ```
+
 </CodeGroup>
 
 ### Branch Protection
@@ -425,6 +406,7 @@ git branch -a
 ### Integration with Deployment Platforms
 
 <CodeGroup>
+
 ```bash Automated Deployment Workflow
 # Trigger deployment on push to main
 1. Push changes to main branch
@@ -434,12 +416,14 @@ git branch -a
 5. Monitor deployment status in real-time
 ```
 
+
 ```bash Branch-based Deployment
 # Deploy different branches to different environments
 main -> production deployment
 staging -> staging environment
 feature/* -> preview deployments
 ```
+
 </CodeGroup>
 
 ## Advanced Git Features
@@ -463,6 +447,7 @@ feature/* -> preview deployments
 ### Git Operations in Terminal
 
 <CodeGroup>
+
 ```bash Common Git Commands
 # Initialize new repository
 git init
@@ -485,6 +470,7 @@ git pull origin main
 # View commit history
 git log --oneline
 ```
+
 </CodeGroup>
 
 ## Best Practices
@@ -516,19 +502,15 @@ git log --oneline
   <Step title="Establish Branch Strategy">
     Define clear branching conventions (Git Flow, GitHub Flow, or custom strategy).
   </Step>
-
   <Step title="Set Up Branch Protection">
     Protect main/production branches with required status checks and reviews.
   </Step>
-
   <Step title="Configure CI/CD">
     Set up automated testing and deployment for all branches.
   </Step>
-
   <Step title="Use Meaningful Commit Messages">
     Write clear, descriptive commit messages that explain the purpose of changes.
   </Step>
-
   <Step title="Regular Maintenance">
     Clean up merged branches, update dependencies, and archive old repositories.
   </Step>
@@ -541,6 +523,7 @@ git log --oneline
 </Tip>
 
 <CodeGroup>
+
 ```bash Conventional Commits
 # Feature commits
 feat: add user authentication system
@@ -566,6 +549,7 @@ perf: optimize image loading
 chore: update dependencies
 chore: configure ESLint rules
 ```
+
 </CodeGroup>
 
 ## Troubleshooting
@@ -577,36 +561,37 @@ chore: configure ESLint rules
     **Problem**: Git operations fail with authentication errors.
 
     **Solutions**:
+
     - Verify your personal access token is valid and not expired
     - Check token permissions for the target repository
     - Ensure token has appropriate scopes for the operation
     - Try regenerating the token if issues persist
   </Accordion>
-
   <Accordion title="Repository Access Issues">
     **Problem**: Cannot access private repositories or perform operations.
 
     **Solutions**:
+
     - Verify repository permissions and access level
     - Check if the repository exists and is spelled correctly
     - Ensure your token has the required permissions
     - Contact repository administrator for access if needed
   </Accordion>
-
   <Accordion title="Push/Pull Errors">
     **Problem**: Push or pull operations fail with merge conflicts or errors.
 
     **Solutions**:
+
     - Pull latest changes before pushing to avoid conflicts
     - Resolve any merge conflicts locally before pushing
     - Check branch permissions and protection rules
     - Verify remote repository URL is correct
   </Accordion>
-
   <Accordion title="Large Repository Issues">
     **Problem**: Repository cloning or operations fail with large repositories.
 
     **Solutions**:
+
     - Clone specific branches instead of entire repository
     - Use shallow clone for faster initial cloning
     - Check repository size and consider using Git LFS for large files
@@ -620,15 +605,12 @@ chore: configure ESLint rules
   <Step title="Check Git Status">
     Run `git status` to check current repository state and any issues.
   </Step>
-
   <Step title="Review Documentation">
     Check GitHub/GitLab documentation for platform-specific guidance.
   </Step>
-
   <Step title="Test with Official Tools">
     Verify operations work with official GitHub/GitLab tools before troubleshooting CodinIT.
   </Step>
-
   <Step title="Contact Support">
     Provide repository URLs, error messages, and steps to reproduce the issue.
   </Step>

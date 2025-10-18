@@ -3,18 +3,14 @@ title: "MCP Integration"
 description: "Connect AI models to external tools, data sources, and APIs using the Model Context Protocol (MCP) for enhanced capabilities"
 ---
 
-<Card
-  title="Explore MCP Servers"
-  icon="search"
-  href="https://modelcontextprotocol.io/servers"
-  horizontal
->
+<Card title="Explore MCP Servers" icon="search" horizontal href="https://modelcontextprotocol.io/servers">
   Discover available MCP servers and tools to enhance your AI workflows.
 </Card>
 
 ## Enhanced AI Capabilities
 
 MCP allows AI models to:
+
 - **Execute system commands** and interact with the file system
 - **Query databases** and external APIs
 - **Access external data sources** like documentation and knowledge bases
@@ -28,10 +24,10 @@ MCP allows AI models to:
   <Card title="Data Access" icon="database">
     Connect to external data sources and APIs for enhanced context.
   </Card>
-  <Card title="System Integration" icon="cpu">
+  <Card title="System Integration" icon="file-half-dashed">
     Integrate with development tools and workflow automation.
   </Card>
-  <Card title="Multi-Modal" icon="layers">
+  <Card title="Multi-Modal" icon="square-binary">
     Combine multiple tools and data sources for complex tasks.
   </Card>
   <Card title="Secure Execution" icon="shield">
@@ -64,6 +60,7 @@ CodinIT supports all major MCP server connection types:
 ## Configuration File Structure
 
 <CodeGroup>
+
 ```json MCP Configuration
 {
   "mcpServers": {
@@ -89,35 +86,36 @@ CodinIT supports all major MCP server connection types:
   }
 }
 ```
+
 </CodeGroup>
 
 ### Server Configuration Options
 
-<ParamField name="type" type="string" required>
+<ParamField type="string" required>
   Server connection type: `stdio`, `sse`, or `streamable-http`.
 </ParamField>
 
-<ParamField name="command" type="string">
+<ParamField type="string">
   Command to execute for STDIO servers (e.g., `node`, `python`).
 </ParamField>
 
-<ParamField name="args" type="array">
+<ParamField type="array">
   Command arguments for STDIO servers.
 </ParamField>
 
-<ParamField name="cwd" type="string">
+<ParamField type="string">
   Working directory for STDIO server execution.
 </ParamField>
 
-<ParamField name="env" type="object">
+<ParamField type="object">
   Environment variables for STDIO server process.
 </ParamField>
 
-<ParamField name="url" type="string" required>
+<ParamField type="string" required>
   Server URL for SSE and Streamable-HTTP servers.
 </ParamField>
 
-<ParamField name="headers" type="object">
+<ParamField type="object">
   Custom headers for HTTP-based server connections.
 </ParamField>
 
@@ -125,12 +123,7 @@ CodinIT supports all major MCP server connection types:
 
 STDIO servers connect to local applications and tools through standard input/output streams, enabling AI models to interact with command-line tools and local services.
 
-<Card
-  title="MCP STDIO Specification"
-  icon="book"
-  href="https://modelcontextprotocol.io/specification"
-  horizontal
->
+<Card title="MCP STDIO Specification" icon="book" horizontal href="https://modelcontextprotocol.io/specification">
   Learn about the STDIO server protocol and implementation details.
 </Card>
 
@@ -140,7 +133,7 @@ STDIO servers connect to local applications and tools through standard input/out
   <Card title="Filesystem Tools" icon="folder">
     Browse files, read content, and perform file operations.
   </Card>
-  <Card title="Git Integration" icon="git-branch">
+  <Card title="Git Integration" icon="github">
     Execute Git commands and manage repository operations.
   </Card>
   <Card title="Terminal Commands" icon="terminal">
@@ -160,6 +153,7 @@ STDIO servers connect to local applications and tools through standard input/out
 ### STDIO Server Example
 
 <CodeGroup>
+
 ```javascript Example STDIO Server
 // filesystem-server.js
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
@@ -197,6 +191,7 @@ async function main() {
 
 main().catch(console.error);
 ```
+
 </CodeGroup>
 
 ## Server-Sent Events (SSE)
@@ -213,7 +208,7 @@ SSE servers provide real-time, bidirectional communication over HTTP using the S
   <Card title="Auto-reconnection" icon="refresh">
     Automatic reconnection handling for robust connectivity.
   </Card>
-  <Card title="Event Streaming" icon="activity">
+  <Card title="Event Streaming" icon="bars-staggered">
     Stream events and data continuously from server to client.
   </Card>
 </CardGroup>
@@ -232,7 +227,7 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
   <Card title="Connection Reuse" icon="repeat">
     Reuse connections for improved efficiency and reduced latency.
   </Card>
-  <Card title="Scalable Architecture" icon="trending-up">
+  <Card title="Scalable Architecture" icon="sitemap">
     Scale horizontally with multiple server instances.
   </Card>
 </CardGroup>
@@ -240,6 +235,7 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
 ## Dynamic Tool Loading
 
 <CodeGroup>
+
 ```bash Load MCP Servers
 # Load servers from configuration
 1. Define MCP servers in configuration file
@@ -247,6 +243,7 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
 3. Tools become available for AI model use
 4. Test tool execution with approval workflow
 ```
+
 
 ```json Dynamic Configuration Update
 {
@@ -259,6 +256,7 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
   }
 }
 ```
+
 </CodeGroup>
 
 ### Tool Discovery
@@ -267,19 +265,15 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
   <Step title="Server Connection">
     Connect to MCP server using specified transport method.
   </Step>
-
   <Step title="Capability Negotiation">
     Exchange capabilities and tool definitions with the server.
   </Step>
-
   <Step title="Tool Registration">
     Register available tools in the local tool registry.
   </Step>
-
   <Step title="Schema Validation">
     Validate tool parameters and response schemas.
   </Step>
-
   <Step title="Availability Testing">
     Test tool execution and handle any connection issues.
   </Step>
@@ -298,7 +292,7 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
   <Card title="Parameter Validation" icon="check">
     Validate tool parameters and ensure type safety.
   </Card>
-  <Card title="Error Handling" icon="alert-triangle">
+  <Card title="Error Handling" icon="bug">
     Comprehensive error handling and user feedback.
   </Card>
   <Card title="Execution Logging" icon="file-text">
@@ -309,6 +303,7 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
 ### Approval Interface
 
 <CodeGroup>
+
 ```typescript Approval Request Example
 interface ToolApprovalRequest {
   serverName: string;
@@ -329,6 +324,7 @@ const approvalRequest: ToolApprovalRequest = {
   riskLevel: 'medium'
 };
 ```
+
 </CodeGroup>
 
 ## Connection Management
@@ -338,36 +334,37 @@ const approvalRequest: ToolApprovalRequest = {
     **Problem**: Unable to connect to MCP server.
 
     **Solutions**:
+
     - Verify server is running and accessible
     - Check network connectivity and firewall settings
     - Validate server configuration and parameters
     - Review server logs for error details
   </Accordion>
-
   <Accordion title="Tool Execution Errors">
     **Problem**: Tool execution fails or returns errors.
 
     **Solutions**:
+
     - Check tool parameters and input validation
     - Verify tool permissions and access rights
     - Review server-side error logs and messages
     - Test tool manually if possible
   </Accordion>
-
   <Accordion title="Protocol Errors">
     **Problem**: Communication errors between client and server.
 
     **Solutions**:
+
     - Verify MCP protocol version compatibility
     - Check message format and encoding
     - Validate JSON-RPC message structure
     - Monitor network stability and timeouts
   </Accordion>
-
   <Accordion title="Resource Issues">
     **Problem**: Server runs out of resources or becomes unresponsive.
 
     **Solutions**:
+
     - Monitor server resource usage
     - Implement proper resource cleanup
     - Configure appropriate timeouts and limits
@@ -378,6 +375,7 @@ const approvalRequest: ToolApprovalRequest = {
 ### Health Monitoring
 
 <CodeGroup>
+
 ```bash Server Health Checks
 # Monitor server status
 1. Periodic connectivity tests
@@ -386,6 +384,7 @@ const approvalRequest: ToolApprovalRequest = {
 4. Automatic reconnection on failures
 5. Health status reporting
 ```
+
 
 ```json Health Status Response
 {
@@ -396,6 +395,7 @@ const approvalRequest: ToolApprovalRequest = {
   "availableTools": ["read_file", "write_file", "list_dir"]
 }
 ```
+
 </CodeGroup>
 
 ## Secure Server Configuration
@@ -421,19 +421,15 @@ const approvalRequest: ToolApprovalRequest = {
   <Step title="Use HTTPS">
     Always use HTTPS for HTTP-based MCP servers in production.
   </Step>
-
   <Step title="Authentication">
     Implement proper authentication mechanisms for server access.
   </Step>
-
   <Step title="Network Isolation">
     Run servers in isolated network environments when possible.
   </Step>
-
   <Step title="Firewall Configuration">
     Configure firewalls to restrict access to necessary ports only.
   </Step>
-
   <Step title="Certificate Validation">
     Validate SSL certificates for encrypted communications.
   </Step>
@@ -463,6 +459,7 @@ const approvalRequest: ToolApprovalRequest = {
 ### Monitoring and Analytics
 
 <CodeGroup>
+
 ```bash Performance Metrics
 # Track key performance indicators
 - Tool execution times
@@ -471,6 +468,7 @@ const approvalRequest: ToolApprovalRequest = {
 - Resource utilization
 - User approval patterns
 ```
+
 
 ```json Performance Dashboard
 {
@@ -485,11 +483,13 @@ const approvalRequest: ToolApprovalRequest = {
   }
 }
 ```
+
 </CodeGroup>
 
 ## Filesystem Operations
 
 <CodeGroup>
+
 ```bash File Operations via MCP
 # AI can now perform file operations
 - Read project files and analyze code
@@ -497,6 +497,7 @@ const approvalRequest: ToolApprovalRequest = {
 - Search and replace across multiple files
 - Run file transformations and formatting
 ```
+
 
 ```json Filesystem Tool Configuration
 {
@@ -513,11 +514,13 @@ const approvalRequest: ToolApprovalRequest = {
   }
 }
 ```
+
 </CodeGroup>
 
 ### Database Integration
 
 <CodeGroup>
+
 ```bash Database Operations via MCP
 # AI can interact with databases
 - Query data and analyze results
@@ -525,6 +528,7 @@ const approvalRequest: ToolApprovalRequest = {
 - Perform data transformations
 - Create database schemas and relationships
 ```
+
 
 ```json Database Tool Configuration
 {
@@ -541,11 +545,13 @@ const approvalRequest: ToolApprovalRequest = {
   }
 }
 ```
+
 </CodeGroup>
 
 ### Development Tools
 
 <CodeGroup>
+
 ```bash Development Tool Integration
 # AI can use development tools
 - Run tests and linting
@@ -553,6 +559,7 @@ const approvalRequest: ToolApprovalRequest = {
 - Deploy applications
 - Monitor system status
 ```
+
 
 ```json Development Tools Configuration
 {
@@ -566,6 +573,7 @@ const approvalRequest: ToolApprovalRequest = {
   }
 }
 ```
+
 </CodeGroup>
 
 ## Server Development Best Practices
@@ -574,19 +582,15 @@ const approvalRequest: ToolApprovalRequest = {
   <Step title="Implement Proper Error Handling">
     Provide clear error messages and handle edge cases gracefully.
   </Step>
-
   <Step title="Validate All Inputs">
     Validate parameters and inputs before processing to prevent issues.
   </Step>
-
   <Step title="Use Timeouts">
     Implement appropriate timeouts for long-running operations.
   </Step>
-
   <Step title="Log Activities">
     Log tool executions and errors for debugging and monitoring.
   </Step>
-
   <Step title="Handle Resource Cleanup">
     Properly clean up resources and connections when tools complete.
   </Step>
@@ -619,19 +623,15 @@ const approvalRequest: ToolApprovalRequest = {
   <Step title="Start Simple">
     Begin with basic tools like filesystem operations and terminal commands.
   </Step>
-
   <Step title="Test Thoroughly">
     Test all tools in development environment before production use.
   </Step>
-
   <Step title="Monitor Usage">
     Monitor tool usage patterns and performance metrics.
   </Step>
-
   <Step title="Expand Gradually">
     Add more complex tools as your workflows become more sophisticated.
   </Step>
-
   <Step title="Maintain Security">
     Regularly review and update security measures as you add new tools.
   </Step>
@@ -644,36 +644,37 @@ const approvalRequest: ToolApprovalRequest = {
     **Problem**: Cannot connect to MCP server.
 
     **Solutions**:
+
     - Verify server process is running
     - Check network connectivity and port availability
     - Validate server configuration and startup parameters
     - Review server logs for error messages
   </Accordion>
-
   <Accordion title="Tool Not Available">
     **Problem**: Tools not appearing in available tools list.
 
     **Solutions**:
+
     - Check server capability negotiation
     - Verify tool definitions are properly formatted
     - Review server logs for tool registration errors
     - Restart server and reload configuration
   </Accordion>
-
   <Accordion title="Permission Denied">
     **Problem**: Tool execution fails with permission errors.
 
     **Solutions**:
+
     - Check file/directory permissions for STDIO servers
     - Verify user has appropriate system permissions
     - Review tool parameter validation and access control
     - Check server configuration for permission settings
   </Accordion>
-
   <Accordion title="Performance Issues">
     **Problem**: Tool execution is slow or unresponsive.
 
     **Solutions**:
+
     - Monitor server resource usage and performance
     - Check for resource leaks or memory issues
     - Optimize tool implementation for better performance
@@ -684,6 +685,7 @@ const approvalRequest: ToolApprovalRequest = {
 ### Debug Tools
 
 <CodeGroup>
+
 ```bash Debug MCP Servers
 # Enable debug logging
 DEBUG=mcp:* codinit
@@ -697,6 +699,7 @@ top -p $(pgrep -f "mcp-server")
 # Check server logs
 tail -f /var/log/mcp-server.log
 ```
+
 </CodeGroup>
 
 <Note>
