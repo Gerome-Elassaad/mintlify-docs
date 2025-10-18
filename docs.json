@@ -32,12 +32,19 @@
           {
             "group": "Features",
             "pages": [
-              "features/overview",
-              "features/development/workbench",
-              "features/development/code-editor",
-              "features/development/terminal",
-              "features/development/webcontainer",
-              "features/development/developers"
+              "features/overview"
+            ],
+            "groups": [
+              {
+                "group": "Development Tools",
+                "pages": [
+                  "features/development/workbench",
+                  "features/development/code-editor",
+                  "features/development/terminal",
+                  "features/development/webcontainer",
+                  "features/development/developers"
+                ]
+              }
             ]
           },
           {
@@ -50,26 +57,43 @@
           {
             "group": "Cloud Providers",
             "pages": [
-              "providers/guide",
-              "providers/anthropic",
-              "providers/openai",
-              "providers/google",
-              "providers/mistral-ai",
-              "providers/groq",
-              "providers/deepseek",
-              "providers/fireworks",
-              "providers/openrouter",
-              "providers/ollama",
-              "providers/xai-grok"
-            ]
-          },
-          {
-            "group": "AWS Bedrock",
-            "pages": [
-              "providers/aws-bedrock",
-              "providers/aws-bedrock/api-key",
-              "providers/aws-bedrock/cli-profile",
-              "providers/aws-bedrock/iam-credentials"
+              "providers/guide"
+            ],
+            "groups": [
+              {
+                "group": "Major AI Providers",
+                "pages": [
+                  "providers/anthropic",
+                  "providers/openai",
+                  "providers/google",
+                  "providers/mistral-ai"
+                ]
+              },
+              {
+                "group": "Alternative Providers",
+                "pages": [
+                  "providers/groq",
+                  "providers/deepseek",
+                  "providers/fireworks",
+                  "providers/openrouter",
+                  "providers/xai-grok"
+                ]
+              },
+              {
+                "group": "AWS Bedrock",
+                "pages": [
+                  "providers/aws-bedrock",
+                  "providers/aws-bedrock/api-key",
+                  "providers/aws-bedrock/cli-profile",
+                  "providers/aws-bedrock/iam-credentials"
+                ]
+              },
+              {
+                "group": "Local Providers",
+                "pages": [
+                  "providers/ollama"
+                ]
+              }
             ]
           },
           {
@@ -100,12 +124,27 @@
           },
           {
             "group": "Integrations",
-            "pages": [
-              "integrations/git",
-              "integrations/supabase",
-              "integrations/netlify",
-              "integrations/vercel",
-              "integrations/deployments"
+            "groups": [
+              {
+                "group": "Version Control",
+                "pages": [
+                  "integrations/git"
+                ]
+              },
+              {
+                "group": "Backend Services",
+                "pages": [
+                  "integrations/supabase"
+                ]
+              },
+              {
+                "group": "Deployment Platforms",
+                "pages": [
+                  "integrations/deployments",
+                  "integrations/netlify",
+                  "integrations/vercel"
+                ]
+              }
             ]
           },
           {
