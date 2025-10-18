@@ -6,7 +6,7 @@ icon: "/assets/ai-icons/bedrock.svg"
 
 # Amazon Bedrock Provider
 
-The Amazon Bedrock provider for the [AI SDK](/docs) contains language model support for the [Amazon Bedrock](https://aws.amazon.com/bedrock) APIs.
+The Amazon Bedrock provider contains language model support for the [Amazon Bedrock](https://aws.amazon.com/bedrock) APIs.
 
 ## Setup
 
@@ -192,7 +192,7 @@ The first argument is the model id, e.g. `meta.llama3-70b-instruct-v1:0`.
 const model = bedrock('meta.llama3-70b-instruct-v1:0');
 ```
 
-Amazon Bedrock models also support some model specific provider options that are not part of the [standard call settings](/docs/ai-sdk-core/settings).
+Amazon Bedrock models also support some model specific provider options that are not part of the standard call settings.
 You can pass them in the `providerOptions` argument:
 
 ```ts
@@ -223,7 +223,7 @@ const { text } = await generateText({
 ```
 
 Amazon Bedrock language models can also be used in the `streamText` function
-(see [AI SDK Core](/docs/ai-sdk-core)).
+(see AI SDK Core documentation).
 
 ### File Inputs
 
@@ -454,7 +454,7 @@ console.log(reasoningDetails); // reasoning details including redacted reasoning
 console.log(text); // text response
 ```
 
-See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details
+See AI SDK UI Chatbot documentation for more details
 on how to integrate reasoning into your chatbot.
 
 ## Computer Use
