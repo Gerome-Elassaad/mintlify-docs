@@ -12,9 +12,7 @@ description: "Connect AI models to external tools, data sources, and APIs using 
   Discover available MCP servers and tools to enhance your AI workflows.
 </Card>
 
-## MCP Overview
-
-### Enhanced AI Capabilities
+## Enhanced AI Capabilities
 
 MCP allows AI models to:
 - **Execute system commands** and interact with the file system
@@ -44,9 +42,7 @@ MCP allows AI models to:
   </Card>
 </CardGroup>
 
-## Supported Server Types
-
-### onnection Methods
+## Connection Methods
 
 CodinIT supports all major MCP server connection types:
 
@@ -65,9 +61,7 @@ CodinIT supports all major MCP server connection types:
   </Card>
 </Columns>
 
-## Server Configuration
-
-### Configuration File Structure
+## Configuration File Structure
 
 <CodeGroup>
 ```json MCP Configuration
@@ -128,8 +122,6 @@ CodinIT supports all major MCP server connection types:
 </ParamField>
 
 ## STDIO Server Integration
-
-### Overview
 
 STDIO servers connect to local applications and tools through standard input/output streams, enabling AI models to interact with command-line tools and local services.
 
@@ -207,9 +199,7 @@ main().catch(console.error);
 ```
 </CodeGroup>
 
-## HTTP-based Servers
-
-### Server-Sent Events (SSE)
+## Server-Sent Events (SSE)
 
 SSE servers provide real-time, bidirectional communication over HTTP using the Server-Sent Events protocol.
 
@@ -247,9 +237,7 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
   </Card>
 </CardGroup>
 
-## Tool Management
-
-### Dynamic Tool Loading
+## Dynamic Tool Loading
 
 <CodeGroup>
 ```bash Load MCP Servers
@@ -297,9 +285,7 @@ Streamable HTTP servers provide optimal performance for high-throughput scenario
   </Step>
 </Steps>
 
-## Approval Workflow
-
-### Safe Tool Execution
+## Safe Tool Execution
 
 <Warning>
   All MCP tool executions require explicit user approval to ensure safe and controlled AI model interactions.
@@ -345,9 +331,7 @@ const approvalRequest: ToolApprovalRequest = {
 ```
 </CodeGroup>
 
-## Error Handling
-
-### Connection Management
+## Connection Management
 
 <AccordionGroup>
   <Accordion title="Connection Failures">
@@ -414,9 +398,7 @@ const approvalRequest: ToolApprovalRequest = {
 ```
 </CodeGroup>
 
-## Security Considerations
-
-### Secure Server Configuration
+## Secure Server Configuration
 
 <CardGroup cols={2}>
   <Card title="Access Control" icon="shield">
@@ -457,9 +439,7 @@ const approvalRequest: ToolApprovalRequest = {
   </Step>
 </Steps>
 
-## Performance Optimization
-
-### Efficient Tool Execution
+## Efficient Tool Execution
 
 <Tip>
   Optimize tool execution for better performance and user experience.
@@ -507,9 +487,7 @@ const approvalRequest: ToolApprovalRequest = {
 ```
 </CodeGroup>
 
-## Integration Examples
-
-### Filesystem Operations
+## Filesystem Operations
 
 <CodeGroup>
 ```bash File Operations via MCP
@@ -590,9 +568,7 @@ const approvalRequest: ToolApprovalRequest = {
 ```
 </CodeGroup>
 
-## Best Practices
-
-### Server Development
+## Server Development Best Practices
 
 <Steps>
   <Step title="Implement Proper Error Handling">
@@ -661,9 +637,7 @@ const approvalRequest: ToolApprovalRequest = {
   </Step>
 </Steps>
 
-## Troubleshooting
-
-### Common Issues
+## Common Issues
 
 <AccordionGroup>
   <Accordion title="Server Connection Issues">
