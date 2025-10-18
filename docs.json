@@ -201,5 +201,67 @@
       "github": "https://github.com/codinit-dev",
       "linkedin": "https://linkedin.com/"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/getting-started",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/getting-started/developer-docs",
+      "destination": "/features/development/developers"
+    },
+    {
+      "source": "/getting-started/quickstart",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/getting-started/teams",
+      "destination": "/getting-started/your-first-project"
+    },
+    {
+      "source": "/integrations/github",
+      "destination": "/integrations/git"
+    },
+    {
+      "source": "/integrations/plugins",
+      "destination": "/mcp-integration/mcp"
+    },
+    {
+      "source": "/models/anthropic",
+      "destination": "/providers/anthropic"
+    },
+    {
+      "source": "/models/deepseek",
+      "destination": "/providers/deepseek"
+    },
+    {
+      "source": "/models/gcp-vertex-ai",
+      "destination": "/providers/google"
+    },
+    {
+      "source": "/models/gemini",
+      "destination": "/providers/google"
+    },
+    {
+      "source": "/models/groq",
+      "destination": "/providers/groq"
+    },
+    {
+      "source": "/models/mistral",
+      "destination": "/providers/mistral-ai"
+    },
+    {
+      "source": "/models/ollama",
+      "destination": "/providers/ollama"
+    },
+    {
+      "source": "/models/openai",
+      "destination": "/providers/openai"
+    },
+    {
+      "source": "/providers/togetherai",
+      "destination": "/providers/openrouter"
+    }
+  ]
 }
