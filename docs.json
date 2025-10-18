@@ -88,17 +88,14 @@
         ]
       },
       {
-        "tab": "Content & Customization",
+        "tab": "Advanced Features",
         "groups": [
           {
             "group": "Essentials",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "essentials/project-templates",
+              "essentials/ai-chat-commands",
+              "essentials/customization"
             ]
           },
           {
