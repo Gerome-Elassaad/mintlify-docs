@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Docs",
+  "name": "CodinIT",
   "colors": {
 		"primary": "#9D4EDD",
 		"light": "#C77DFF",
@@ -59,6 +59,7 @@
               "providers/deepseek",
               "providers/fireworks",
               "providers/openrouter",
+              "providers/ollama",
               "providers/xai-grok"
             ]
           },
@@ -74,9 +75,7 @@
             "group": "Running Models Locally",
             "pages": [
               "running-models-locally/guide",
-              "running-models-locally/lm-studio",
-              "running-models-locally/guide",
-              "providers/ollama"
+              "running-models-locally/lm-studio"
             ]
           },
           {
@@ -140,7 +139,7 @@
         ]
       },
       {
-        "tab": "Support",
+        "tab": "Help",
         "groups": [
           {
             "group": "Help & Documentation",

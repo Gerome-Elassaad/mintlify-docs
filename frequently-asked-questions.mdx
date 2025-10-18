@@ -4,12 +4,22 @@ description: "Common questions about CodinIT, models, features, and troubleshoot
 icon: "circle-question"
 ---
 
-# Frequently Asked Questions (FAQ)
+Get answers to the most common questions about CodinIT's AI-powered development platform.
+
+<Card
+  title="Need Immediate Help?"
+  icon="question-circle"
+  href="#get-help--support"
+  horizontal
+>
+  Can't find your answer? Check our troubleshooting guide or contact support for personalized assistance.
+</Card>
 
 ## Models and Setup
 
-??? question "What are the best models for CodinIT.dev?"
-For the best experience with CodinIT.dev, we recommend using the following models from our 19 supported providers:
+<AccordionGroup>
+  <Accordion icon="cpu" title="What are the best models for CodinIT.dev?">
+    For the best experience with CodinIT.dev, we recommend using the following models from our 19 supported providers:
 
     **Top Recommended Models:**
     - **Claude 4.5 Sonnet** (Anthropic): Best overall coder, excellent for complex applications
@@ -28,14 +38,17 @@ For the best experience with CodinIT.dev, we recommend using the following model
     - **xAI Grok 4**: Latest Grok model with 256K context window
     - **Anthropic Claude 4 Opus**: Latest flagship model from Anthropic
 
-    !!! tip "Model Selection Tips"
-        - Use larger models (7B+ parameters) for complex applications
-        - Claude models excel at structured code generation
-        - GPT-4o provides excellent general-purpose coding assistance
-        - Gemini models offer the fastest response times
+    <Tip>
+      **Model Selection Tips**
+      - Use larger models (7B+ parameters) for complex applications
+      - Claude models excel at structured code generation
+      - GPT-4o provides excellent general-purpose coding assistance
+      - Gemini models offer the fastest response times
+    </Tip>
+  </Accordion>
 
-??? question "How do I configure API keys for different providers?"
-You can configure API keys in two ways:
+  <Accordion icon="key" title="How do I configure API keys for different providers?">
+    You can configure API keys in two ways:
 
     **Option 1: Environment Variables (Recommended for production)**
     Create a `.env.local` file in your project root:
@@ -56,11 +69,11 @@ You can configure API keys in two ways:
     - Paste your API key and press Enter to save
     - Look for the green checkmark to confirm proper configuration
 
-    !!! note "Security Note"
-        Never commit API keys to version control. The `.env.local` file is already in `.gitignore`.
+    <Note>Never commit API keys to version control. The `.env.local` file is already in `.gitignore`.</Note>
+  </Accordion>
 
-??? question "How do I add a new LLM provider?"
-CodinIT.dev uses a modular provider architecture. To add a new provider:
+  <Accordion icon="plug" title="How do I add a new LLM provider?">
+    CodinIT.dev uses a modular provider architecture. To add a new provider:
 
     1. **Create a Provider Class** in `app/lib/modules/llm/ai-icons/your-provider.ts`
     2. **Implement the BaseProvider interface** with your provider's specific logic
@@ -68,9 +81,10 @@ CodinIT.dev uses a modular provider architecture. To add a new provider:
     4. **The system automatically detects** and registers your new provider
 
     See the provider implementation examples in the codebase for complete details.
+  </Accordion>
 
-??? question "How do I set up Moonshot AI (Kimi) provider?"
-Moonshot AI provides access to advanced Kimi models with excellent reasoning capabilities:
+  <Accordion icon="star" title="How do I set up Moonshot AI (Kimi) provider?">
+    Moonshot AI provides access to advanced Kimi models with excellent reasoning capabilities:
 
     **Setup Steps:**
     1. Visit [Moonshot AI Platform](https://platform.moonshot.ai/console/api-keys)
@@ -84,14 +98,17 @@ Moonshot AI provides access to advanced Kimi models with excellent reasoning cap
     - **Kimi Thinking**: Specialized for complex reasoning tasks
     - **Moonshot v1 series**: Legacy models with vision capabilities
 
-    !!! tip "Moonshot AI Features"
-        - Excellent for Chinese language tasks
-        - Strong reasoning capabilities
-        - Vision-enabled models available
-        - Competitive pricing
+    <Tip>
+      **Moonshot AI Features**
+      - Excellent for Chinese language tasks
+      - Strong reasoning capabilities
+      - Vision-enabled models available
+      - Competitive pricing
+    </Tip>
+  </Accordion>
 
-??? question "What are the latest xAI Grok models?"
-xAI has released several new Grok models with enhanced capabilities:
+  <Accordion icon="zap" title="What are the latest xAI Grok models?">
+    xAI has released several new Grok models with enhanced capabilities:
 
     **Latest Models:**
     - **Grok 4**: Most advanced model with 256K context window
@@ -103,11 +120,14 @@ xAI has released several new Grok models with enhanced capabilities:
     1. Get your API key from [xAI Platform](https://docs.x.ai/docs/quickstart#creating-an-api-key)
     2. Add `XAI_API_KEY=your_key_here` to your `.env.local` file
     3. Models will be available in the provider selection
+  </Accordion>
+</AccordionGroup>
 
 ## Best Practices
 
-??? question "How do I access help and documentation?"
-CodinIT.dev provides multiple ways to access help and documentation:
+<AccordionGroup>
+  <Accordion icon="question-circle" title="How do I access help and documentation?">
+    CodinIT.dev provides multiple ways to access help and documentation:
 
     **Help Icon in Sidebar:**
     - Look for the question mark (?) icon in the sidebar
@@ -122,9 +142,10 @@ CodinIT.dev provides multiple ways to access help and documentation:
 
     **Community Support:**
     - **GitHub Issues**: Report bugs and request features
+  </Accordion>
 
-??? question "How do I get the best results with CodinIT.dev?"
-Follow these proven strategies for optimal results:
+  <Accordion icon="sparkles" title="How do I get the best results with CodinIT.dev?">
+    Follow these proven strategies for optimal results:
 
     **Project Setup:**
     - **Be specific about your stack**: Mention frameworks/libraries (Astro, Tailwind, ShadCN, Next.js) in your initial prompt
@@ -141,9 +162,10 @@ Follow these proven strategies for optimal results:
     - **Connect databases**: Integrate Supabase for backend functionality
     - **Use Git integration**: Version control your projects with GitHub
     - **Deploy easily**: Use built-in Vercel, Netlify, or GitHub Pages deployment
+  </Accordion>
 
-??? question "How do I use MCP (Model Context Protocol) tools?"
-MCP extends CodinIT.dev's AI capabilities with external tools:
+  <Accordion icon="puzzle-piece" title="How do I use MCP (Model Context Protocol) tools?">
+    MCP extends CodinIT.dev's AI capabilities with external tools:
 
     **Setting up MCP:**
     1. Go to Settings → MCP tab
@@ -158,9 +180,10 @@ MCP extends CodinIT.dev's AI capabilities with external tools:
     - Custom business logic tools
 
     The MCP integration allows the AI to interact with external services and data sources during conversations.
+  </Accordion>
 
-??? question "How do I deploy my CodinIT.dev projects?"
-CodinIT.dev supports one-click deployment to multiple platforms:
+  <Accordion icon="rocket" title="How do I deploy my CodinIT.dev projects?">
+    CodinIT.dev supports one-click deployment to multiple platforms:
 
     **Supported Platforms:**
     - **Vercel**: Go to Settings → Connections → Vercel, then deploy with one click
@@ -172,9 +195,10 @@ CodinIT.dev supports one-click deployment to multiple platforms:
     - Environment variable management
     - Custom domain support
     - Preview deployments for testing
+  </Accordion>
 
-??? question "How do I use Git integration features?"
-CodinIT.dev provides comprehensive Git and GitHub integration:
+  <Accordion icon="git-branch" title="How do I use Git integration features?">
+    CodinIT.dev provides comprehensive Git and GitHub integration:
 
     **Basic Git Operations:**
     - Import existing repositories by URL
@@ -187,25 +211,33 @@ CodinIT.dev provides comprehensive Git and GitHub integration:
     - Import from your connected repositories
     - Version control with diff visualization
     - Collaborative development support
+  </Accordion>
+</AccordionGroup>
 
 ## Project Information
 
-??? question "How do I contribute to CodinIT.dev?"
-Check out our GitHub repository for contribution guidelines and get involved with the community!
+<AccordionGroup>
+  <Accordion icon="users" title="How do I contribute to CodinIT.dev?">
+    Check out our GitHub repository for contribution guidelines and get involved with the community!
+  </Accordion>
 
-??? question "What are the future plans for CodinIT.dev?"
-Visit our [Roadmap](https://roadmap.sh/r/ottodev-roadmap-2ovzo) for the latest updates.  
- New features and improvements are on the way!
+  <Accordion icon="road" title="What are the future plans for CodinIT.dev?">
+    Visit our [Roadmap](https://roadmap.sh/r/ottodev-roadmap-2ovzo) for the latest updates.
+    New features and improvements are on the way!
+  </Accordion>
 
-??? question "Why are there so many open issues/pull requests?"
-CodinIT.dev began as a small showcase project on @ColeMedin's YouTube channel to explore editing open-source projects with local LLMs. However, it quickly grew into a massive community effort!
+  <Accordion icon="comments" title="Why are there so many open issues/pull requests?">
+    CodinIT.dev began as a small showcase project on @ColeMedin's YouTube channel to explore editing open-source projects with local LLMs. However, it quickly grew into a massive community effort!
 
     We're forming a team of maintainers to manage demand and streamline issue resolution. The maintainers are rockstars, and we're also exploring partnerships to help the project thrive.
+  </Accordion>
+</AccordionGroup>
 
 ## New Features & Technologies
 
-??? question "What's new in CodinIT.dev?"
-Recent major additions to CodinIT.dev include:
+<AccordionGroup>
+  <Accordion icon="newspaper" title="What's new in CodinIT.dev?">
+    Recent major additions to CodinIT.dev include:
 
     **Advanced AI Capabilities:**
     - **19 LLM Providers**: Support for Anthropic, OpenAI, Google, DeepSeek, Cohere, and more
@@ -230,9 +262,10 @@ Recent major additions to CodinIT.dev include:
     - **One-Click Deployment**: Vercel, Netlify, and GitHub Pages support
     - **Environment Management**: Production-ready configuration
     - **Build Optimization**: Automatic configuration for popular frameworks
+  </Accordion>
 
-??? question "How do I use the new project templates?"
-CodinIT.dev offers templates for popular frameworks and technologies:
+  <Accordion icon="template" title="How do I use the new project templates?">
+    CodinIT.dev offers templates for popular frameworks and technologies:
 
     **Getting Started:**
     1. Start a new project in CodinIT.dev
@@ -248,9 +281,10 @@ CodinIT.dev offers templates for popular frameworks and technologies:
     - **Vanilla**: Vite with TypeScript/JavaScript
 
     Templates include pre-configured tooling, linting, and build processes.
+  </Accordion>
 
-??? question "How does WebContainer work?"
-WebContainer provides a secure development environment:
+  <Accordion icon="container" title="How does WebContainer work?">
+    WebContainer provides a secure development environment:
 
     **Features:**
     - **Isolated Environment**: Secure sandbox for running code
@@ -262,9 +296,10 @@ WebContainer provides a secure development environment:
     - All major JavaScript frameworks (React, Vue, Angular, etc.)
     - Build tools (Vite, Webpack, Parcel)
     - Package managers (npm, pnpm, yarn)
+  </Accordion>
 
-??? question "How do I connect external databases?"
-Use Supabase for backend database functionality:
+  <Accordion icon="database" title="How do I connect external databases?">
+    Use Supabase for backend database functionality:
 
     **Setup Process:**
     1. Create a Supabase project at supabase.com
@@ -278,11 +313,14 @@ Use Supabase for backend database functionality:
     - Row Level Security (RLS)
     - Automatic API generation
     - Database migrations
+  </Accordion>
+</AccordionGroup>
 
 ## Model Comparisons
 
-??? question "How do local LLMs compare to larger models like Claude 3.5 Sonnet for CodinIT.dev?"
-While local LLMs are improving rapidly, larger models still offer the best results for complex applications. Here's the current landscape:
+<AccordionGroup>
+  <Accordion icon="scale" title="How do local LLMs compare to larger models like Claude 3.5 Sonnet for CodinIT.dev?">
+    While local LLMs are improving rapidly, larger models still offer the best results for complex applications. Here's the current landscape:
 
     **Recommended for Production:**
     - **Claude 4 Opus**: Latest flagship model with enhanced reasoning (200K context)
@@ -309,103 +347,123 @@ While local LLMs are improving rapidly, larger models still offer the best resul
     - Use 7B+ parameter models for reasonable performance
     - Still experimental for complex, large-scale applications
 
-    !!! tip "Model Selection Guide"
-        - Use Claude/GPT-4o for complex applications
-        - Use Gemini for fast prototyping
-        - Use local models for privacy/offline development
-        - Always test with your specific use case
+    <Tip>
+      **Model Selection Guide**
+      - Use Claude/GPT-4o for complex applications
+      - Use Gemini for fast prototyping
+      - Use local models for privacy/offline development
+      - Always test with your specific use case
+    </Tip>
+  </Accordion>
+</AccordionGroup>
 
 ## Troubleshooting
 
-??? error "There was an error processing this request"
-This generic error message means something went wrong. Check these locations:
+<AccordionGroup>
+  <Accordion icon="exclamation-triangle" title="There was an error processing this request">
+    This generic error message means something went wrong. Check these locations:
 
     - **Terminal output**: If you started with Docker or `pnpm`
     - **Browser developer console**: Press `F12` → Console tab
     - **Server logs**: Check for any backend errors
     - **Network tab**: Verify API calls are working
+  </Accordion>
 
-??? error "x-api-key header missing"
-This authentication error can be resolved by:
+  <Accordion icon="key" title="x-api-key header missing">
+    This authentication error can be resolved by:
 
     - **Restarting the container**: `docker compose restart` (if using Docker)
     - **Switching run methods**: Try `pnpm` if using Docker, or vice versa
     - **Checking API keys**: Verify your API keys are properly configured
     - **Clearing browser cache**: Sometimes cached authentication causes issues
+  </Accordion>
 
-??? error "Blank preview when running the app"
-Blank previews usually indicate code generation issues:
+  <Accordion icon="eye-slash" title="Blank preview when running the app">
+    Blank previews usually indicate code generation issues:
 
     - **Check developer console** for JavaScript errors
     - **Verify WebContainer is running** properly
     - **Try refreshing** the preview pane
     - **Check for hallucinated code** in the generated files
     - **Restart the development server** if issues persist
+  </Accordion>
 
-??? error "MCP server connection failed"
-If you're having trouble with MCP integrations:
+  <Accordion icon="unplug" title="MCP server connection failed">
+    If you're having trouble with MCP integrations:
 
     - **Verify server configuration** in Settings → MCP
     - **Check server endpoints** and authentication credentials
     - **Test server connectivity** outside of CodinIT.dev
     - **Review MCP server logs** for specific error messages
     - **Ensure server supports** the MCP protocol version
+  </Accordion>
 
-??? error "Git integration not working"
-Common Git-related issues and solutions:
+  <Accordion icon="git-branch" title="Git integration not working">
+    Common Git-related issues and solutions:
 
     - **GitHub connection failed**: Verify your GitHub token has correct permissions
     - **Repository not found**: Check repository URL and access permissions
     - **Push/pull failed**: Ensure you have write access to the repository
     - **Merge conflicts**: Resolve conflicts manually or use the diff viewer
     - **Large files blocked**: Check GitHub's file size limits
+  </Accordion>
 
-??? error "Deployment failed"
-Deployment issues can be resolved by:
+  <Accordion icon="rocket" title="Deployment failed">
+    Deployment issues can be resolved by:
 
     - **Checking build logs** for specific error messages
     - **Verifying environment variables** are set correctly
     - **Testing locally** before deploying
     - **Checking platform-specific requirements** (Node version, build commands)
     - **Reviewing deployment configuration** in platform settings
+  </Accordion>
 
-??? error "Everything works, but the results are bad"
-For suboptimal AI responses, try these solutions:
+  <Accordion icon="thumbs-down" title="Everything works, but the results are bad">
+    For suboptimal AI responses, try these solutions:
 
     - **Switch to a more capable model**: Use Claude 3.5 Sonnet, GPT-4o, or Claude 4 Opus
     - **Be more specific** in your prompts about requirements and technologies
     - **Use the enhance prompt feature** to refine your requests
     - **Break complex tasks** into smaller, focused prompts
     - **Provide context** about your project structure and goals
+  </Accordion>
 
-??? error "WebContainer preview not loading"
-If the live preview isn't working:
+  <Accordion icon="display" title="WebContainer preview not loading">
+    If the live preview isn't working:
 
     - **Check WebContainer status** in the terminal
     - **Verify Node.js compatibility** with your project
     - **Restart the development environment**
     - **Clear browser cache** and reload
     - **Check for conflicting ports** (default is 5173)
+  </Accordion>
 
-??? error "Received structured exception #0xc0000005: access violation"
-**Windows-specific issue**: Update the [Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+  <Accordion icon="windows" title="Received structured exception #0xc0000005: access violation">
+    **Windows-specific issue**: Update the [Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+  </Accordion>
 
-??? error "Miniflare or Wrangler errors in Windows"
-**Windows development environment**: Install Visual Studio C++ (version 14.40.33816 or later). More details in [GitHub Issues](https://github.com/Gerome-Elassaad/CodingIT/issues/)
+  <Accordion icon="laptop" title="Miniflare or Wrangler errors in Windows">
+    **Windows development environment**: Install Visual Studio C++ (version 14.40.33816 or later). More details in [GitHub Issues](https://github.com/Gerome-Elassaad/CodingIT/issues/)
+  </Accordion>
 
-??? error "Provider not showing up after adding it"
-If your custom LLM provider isn't appearing:
+  <Accordion icon="plug" title="Provider not showing up after adding it">
+    If your custom LLM provider isn't appearing:
 
     - **Restart the development server** to reload providers
     - **Check the provider registry** in `app/lib/modules/llm/registry.ts`
     - **Verify the provider class** extends `BaseProvider` correctly
     - **Check browser console** for provider loading errors
     - **Ensure proper TypeScript compilation** without errors
-
----
+  </Accordion>
+</AccordionGroup>
 
 ## Get Help & Support
 
-!!! bug "Report Issues"
-[Open an Issue For Web Version](https://github.com/Gerome-Elassaad/CodingIT/issues/) in our GitHub Repository
-[Open an Issue For Desktop Version](https://github.com/Gerome-Elassaad/codinit-app/issues/) in our GitHub Repository
+<CardGroup cols={2}>
+  <Card title="Report Issues" icon="bug">
+    [Open an Issue For Web Version](https://github.com/Gerome-Elassaad/CodingIT/issues/) in our GitHub Repository
+  </Card>
+  <Card title="Desktop Version Issues" icon="desktop">
+    [Open an Issue For Desktop Version](https://github.com/Gerome-Elassaad/codinit-app/issues/) in our GitHub Repository
+  </Card>
+</CardGroup>
