@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "aspen",
   "name": "CodinIT",
   "colors": {
-		"primary": "#9D4EDD",
-		"light": "#C77DFF",
-		"dark": "#7B2CBF"
+    "primary": "#3B82F6",
+    "light": "#F8FAFC",
+    "dark": "#0F172A"
   },
   "favicon": "/favicon.ico",
   "navigation": {
@@ -163,9 +163,9 @@
           "icon": "newspaper"
         },
         {
-          "anchor": "Web Version Docs",
-          "href": "https://docs.codinit.dev/",
-          "icon": "book-open-cover"
+          "anchor": "Releases",
+          "href": "https://github.com/Gerome-Elassaad/codinit-app/releases",
+          "icon": "github"
         }
       ]
     }
