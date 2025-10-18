@@ -55,7 +55,7 @@
           {
             "group": "Cloud Providers",
             "pages": [
-              "providers/guide",
+              "providers/provider-guide",
               {
                 "group": "Major AI Providers",
                 "pages": [
@@ -76,15 +76,6 @@
                 ]
               },
               {
-                "group": "AWS Bedrock",
-                "pages": [
-                  "providers/aws-bedrock",
-                  "providers/aws-bedrock/api-key",
-                  "providers/aws-bedrock/cli-profile",
-                  "providers/aws-bedrock/iam-credentials"
-                ]
-              },
-              {
                 "group": "Local Providers",
                 "pages": [
                   "providers/ollama"
@@ -95,7 +86,7 @@
           {
             "group": "Running Models Locally",
             "pages": [
-              "running-models-locally/guide",
+              "running-models-locally/local-model-setup",
               "running-models-locally/lm-studio"
             ]
           },

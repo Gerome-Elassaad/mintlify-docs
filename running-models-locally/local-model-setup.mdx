@@ -29,7 +29,7 @@ Your RAM determines which models you can run effectively:
 
 ## Recommended Models
 
-### Primary Recommendation: Qwen3 Coder 30B
+Primary Recommendation: Qwen3 Coder 30B
 
 After extensive testing, **Qwen3 Coder 30B** is the most reliable model under 70B parameters for CodinIT:
 
@@ -53,7 +53,7 @@ Most models under 30B parameters (7B-20B) fail with CodinIT because they:
 
 ## Runtime Options
 
-### LM Studio
+LM Studio
 - **Pros**: User-friendly GUI, easy model management, built-in server
 - **Cons**: Memory overhead from UI, limited to single model at a time
 - **Best for**: Desktop users who want simplicity
@@ -67,7 +67,7 @@ Most models under 30B parameters (7B-20B) fail with CodinIT because they:
 
 ## Critical Configuration
 
-### Required Settings
+Required Settings
 
 **In CodinIT:**
 - ✅ Enable "Use Compact Prompt" - Reduces prompt size by 90%
@@ -109,7 +109,7 @@ Quantization reduces model precision to fit on consumer hardware:
 
 ## Performance Expectations
 
-### What's Normal
+What's Normal
 
 - **Initial load time**: 10-30 seconds for model warmup
 - **Token generation**: 5-20 tokens/second on consumer hardware
@@ -126,7 +126,7 @@ Quantization reduces model precision to fit on consumer hardware:
 
 ## Use Case Comparison
 
-### When to Use Local Models
+When to Use Local Models
 
 ✅ **Perfect for:**
 - Offline development environments
@@ -147,7 +147,7 @@ Quantization reduces model precision to fit on consumer hardware:
 
 ## Troubleshooting
 
-### Common Issues & Solutions
+Common Issues & Solutions
 
 **"Shell integration unavailable"**
 - Switch to bash in CodinIT Settings → Terminal → Default Terminal Profile
@@ -188,7 +188,7 @@ Quantization reduces model precision to fit on consumer hardware:
 
 ## Advanced Configuration
 
-### Multi-GPU Setup
+Multi-GPU Setup
 If you have multiple GPUs, you can split model layers:
 - LM Studio: Automatic GPU detection
 - Ollama: Set `num_gpu` parameter
