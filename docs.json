@@ -32,9 +32,7 @@
           {
             "group": "Features",
             "pages": [
-              "features/overview"
-            ],
-            "groups": [
+              "features/overview",
               {
                 "group": "Development Tools",
                 "pages": [
@@ -57,9 +55,7 @@
           {
             "group": "Cloud Providers",
             "pages": [
-              "providers/guide"
-            ],
-            "groups": [
+              "providers/guide",
               {
                 "group": "Major AI Providers",
                 "pages": [
@@ -124,7 +120,7 @@
           },
           {
             "group": "Integrations",
-            "groups": [
+            "pages": [
               {
                 "group": "Version Control",
                 "pages": [
