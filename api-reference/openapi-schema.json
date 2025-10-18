@@ -14,12 +14,8 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8788",
+      "url": "http://localhost:5173",
       "description": "Local development server"
-    },
-    {
-      "url": "https://your-production-domain.com",
-      "description": "Production server"
     }
   ],
   "security": [

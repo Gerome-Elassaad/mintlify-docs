@@ -1,5 +1,67 @@
 ---
-title: 'Get Plants'
-openapi: 'GET /plants'
+title: 'Get Operations'
+description: 'API endpoints for retrieving and listing resources'
+openapi: 'GET /api/auth/github, GET /api/files, GET /api/github-user, GET /api/health'
 icon: 'list'
 ---
+
+## Web API Endpoints
+
+### GitHub OAuth Callback
+<openapi path="GET /api/auth/github" method="get" />
+
+### List Files in Sandbox
+<openapi path="GET /api/files" method="get" />
+
+### Read File Content
+<openapi path="GET /api/files/content" method="get" />
+
+### Read from Existing Sandbox
+<openapi path="GET /api/files/sandbox" method="get" />
+
+### List Files in Existing Sandbox
+<openapi path="GET /api/files/sandbox/list" method="get" />
+
+### Get Debug Session
+<openapi path="GET /api/debug" method="get" />
+
+### List Deployments
+<openapi path="GET /api/deployments" method="get" />
+
+### Get Deployment Status
+<openapi path="GET /api/deployments/{id}" method="get" />
+
+### List GitHub Repositories
+<openapi path="GET /api/integrations/github/repos" method="get" />
+
+### Get Repository Contents
+<openapi path="GET /api/integrations/github/repos/{owner}/{repo}" method="get" />
+
+### List Workflows
+<openapi path="GET /api/workflows" method="get" />
+
+### Get Workflow
+<openapi path="GET /api/workflows/{id}" method="get" />
+
+### Get Execution Status
+<openapi path="GET /api/workflows/{id}/execute" method="get" />
+
+## Local API Endpoints
+
+### Get GitHub User Information
+<openapi path="GET /api/github-user" method="get" schema="openapi-schema.json" />
+
+### Health Check
+<openapi path="GET /api/health" method="get" schema="openapi-schema.json" />
+
+### Get Available AI Models
+<openapi path="GET /api/models" method="get" schema="openapi-schema.json" />
+
+### Get Models for Specific Provider
+<openapi path="GET /api/models/{provider}" method="get" schema="openapi-schema.json" />
+
+### Check API Key Configuration
+<openapi path="GET /api/check-env-key" method="get" schema="openapi-schema.json" />
+
+### Get Configured Providers
+<openapi path="GET /api/configured-providers" method="get" schema="openapi-schema.json" />

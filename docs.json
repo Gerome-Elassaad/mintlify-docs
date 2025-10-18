@@ -23,6 +23,7 @@
           {
             "group": "Getting Started",
             "pages": [
+              "quickstart",
               "getting-started/installing-codinit",
               "getting-started/select-your-model",
               "getting-started/your-first-project"
@@ -49,7 +50,7 @@
           {
             "group": "Cloud Providers",
             "pages": [
-              "providers/1.overview",
+              "providers/guide",
               "providers/anthropic",
               "providers/openai",
               "providers/google",
@@ -72,7 +73,7 @@
           {
             "group": "Running Models Locally",
             "pages": [
-              "running-models-locally/1.overview",
+              "running-models-locally/guide",
               "running-models-locally/lm-studio",
               "running-models-locally/guide",
               "providers/ollama"
@@ -105,6 +106,8 @@
             "pages": [
               "integrations/git",
               "integrations/supabase",
+              "integrations/netlify",
+              "integrations/vercel",
               "integrations/deployments"
             ]
           },

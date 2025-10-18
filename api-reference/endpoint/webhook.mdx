@@ -1,5 +1,47 @@
 ---
-title: 'New Plant'
-openapi: 'WEBHOOK /plant/webhook'
+title: 'Integration & Events'
+description: 'API endpoints for integrations, webhooks, and external events'
+openapi: 'POST /api/webhooks/github, POST /api/auth/github/revoke, POST /api/code/execute, POST /api/terminal, POST /api/files/content, POST /api/files/sandbox, POST /api/debug, POST /api/deployments/{id}/rollback, GET /api/workflows/{id}/execute, POST /api/import-dataset'
 icon: 'webhook'
 ---
+
+## Web API Endpoints
+
+### GitHub Webhook Handler
+<openapi path="POST /api/webhooks/github" method="post" />
+
+### Revoke GitHub Access Token
+<openapi path="POST /api/auth/github/revoke" method="post" />
+
+### Execute Code in Sandbox
+<openapi path="POST /api/code/execute" method="post" />
+
+### Execute Terminal Command
+<openapi path="POST /api/terminal" method="post" />
+
+### Write File Content
+<openapi path="POST /api/files/content" method="post" />
+
+### Write to Existing Sandbox
+<openapi path="POST /api/files/sandbox" method="post" />
+
+### Analyze Error
+<openapi path="POST /api/debug" method="post" />
+
+### Rollback Deployment
+<openapi path="POST /api/deployments/{id}/rollback" method="post" />
+
+### Execute Workflow
+<openapi path="POST /api/workflows/{id}/execute" method="post" />
+
+### Import HuggingFace Dataset
+<openapi path="POST /api/import-dataset" method="post" />
+
+## Local API Endpoints
+
+### GitHub User Actions
+<openapi path="POST /api/github-user" method="post" schema="openapi-schema.json" />
+
+<Note>
+  The Local API focuses on core chat and user management functionality without the extensive webhook and integration features available in the Web API.
+</Note>

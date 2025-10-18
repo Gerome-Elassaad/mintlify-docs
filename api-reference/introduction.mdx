@@ -1,34 +1,67 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: 'CodinIT API Reference'
+description: 'Comprehensive API documentation for CodinIT platform'
 icon: 'square-terminal'
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+  Welcome to the CodinIT API documentation. This reference covers both the Web API and Local API versions of the CodinIT platform.
 </Note>
 
-## Welcome
+## API Overview
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+CodinIT provides two distinct API versions:
+
+1. **Web API** (`openapi.json`) - Production-ready API for the hosted CodinIT platform at codingit.vercel.app
+2. **Local API** (`openapi-schema.json`) - Development API for local CodinIT instances
+
+Both APIs are documented using OpenAPI 3.x specifications and support comprehensive AI-powered coding workflows, sandbox execution, GitHub integration, and deployment capabilities.
 
 <Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+  title="Web API Schema"
+  icon="globe"
+  href="#"
 >
-  View the OpenAPI specification file
+  Production API specification for hosted CodinIT platform
+</Card>
+
+<Card
+  title="Local API Schema"
+  icon="laptop"
+  href="#"
+>
+  Development API specification for local CodinIT instances
 </Card>
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+Both API versions support multiple authentication methods depending on the endpoint:
 
-```json
+**Web API Authentication:**
+- Bearer tokens (JWT)
+- Supabase session tokens
+
+**Local API Authentication:**
+- Cookie-based API keys
+- Bearer tokens
+
+```json Web API
 "security": [
   {
-    "bearerAuth": []
+    "BearerAuth": []
+  },
+  {
+    "SupabaseAuth": []
   }
 ]
 ```
+
+```json Local API
+"security": [
+  {
+    "CookieAuth": []
+  },
+  {
+    "BearerAuth": []
+  }
+]
